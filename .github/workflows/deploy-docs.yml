@@ -1,0 +1,107 @@
+name: Build and deploy Writerside docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Writerside/**'
+      - '.github/workflows/deploy-docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, but don't cancel in-progress runs
+# (we want the latest commit to publish, not stomp earlier ones mid-flight).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build with Writerside
+    runs-on: ubuntu-latest
+    env:
+      # Format is `<module>/<product>`: module = the Writerside dir name,
+      # product = the instance id from azd.tree (<instance-profile id="azd">).
+      INSTANCE: Writerside/azd
+      # Artifact name is derived from the product name + instance, with the
+      # `2-all` suffix added by writerside-github-action.
+      ARTIFACT: webHelpAZD2-all.zip
+      # Pin Writerside builder version. Bump when JetBrains releases a new one.
+      DOCKER_VERSION: '243.21565'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build docs using Writerside Docker builder
+        uses: JetBrains/writerside-github-action@v4
+        with:
+          instance: ${{ env.INSTANCE }}
+          artifact: ${{ env.ARTIFACT }}
+          docker-version: ${{ env.DOCKER_VERSION }}
+
+      - name: Save algolia-indexes (optional, for search)
+        uses: actions/upload-artifact@v4
+        with:
+          name: algolia-indexes
+          path: artifacts/algolia-indexes-AZD.zip
+          retention-days: 7
+        continue-on-error: true
+
+      - name: Save build artifact for diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: webHelp
+          # Bundle the zip AND report.json — the checker job needs the
+          # report to surface broken links / missing topics.
+          path: |
+            artifacts/${{ env.ARTIFACT }}
+            artifacts/report.json
+          retention-days: 7
+
+      - name: Unzip site for GitHub Pages
+        run: |
+          mkdir -p site
+          unzip -O UTF-8 -qq "artifacts/${{ env.ARTIFACT }}" -d site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  # Advisory: surface broken links and structural issues, but don't block
+  # deploys on them. The checker is stricter than the builder — it expects
+  # `<a>` in section-starting-page groups where `<card>` (which the builder
+  # accepts and renders correctly) was used.
+  test:
+    name: Test docs build
+    needs: build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: webHelp
+          path: artifacts
+
+      - name: Test Writerside docs
+        uses: JetBrains/writerside-checker-action@v1
+        with:
+          instance: Writerside/azd
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

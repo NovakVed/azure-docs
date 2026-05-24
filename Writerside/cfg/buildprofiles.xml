@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <variables>
+        <primary-color>blue</primary-color>
+        <header-logo>logo.svg</header-logo>
+        <!-- Without this, Writerside generates "logoUrl": "/logo.svg" in
+             config.json (file lives at /azure-docs/images/logo.svg on
+             GitHub Pages, so the bare /logo.svg 404s). JetBrains uses the
+             same override in their intellij-sdk-docs buildprofiles. -->
+        <images-prefix-override>images/</images-prefix-override>
+        <enable-browser-search>true</enable-browser-search>
+        <enable-fullscreen-mode>true</enable-fullscreen-mode>
+        <enable-page-feedback>true</enable-page-feedback>
+        <noindex-content>false</noindex-content>
+    </variables>
+    <build-profile instance="azd">
+        <variables>
+            <github-edit-page-base-url>https://github.com/NovakVed/azure-docs/edit/main/Writerside/topics/</github-edit-page-base-url>
+            <web-root>https://novakved.github.io/azure-docs/</web-root>
+        </variables>
+    </build-profile>
+    <footer>
+        <social type="linkedin" href="https://www.linkedin.com/in/vedran-novak/">Vedran Novak on LinkedIn</social>
+        <social type="blog" href="https://vednovak.com/">vednovak.com</social>
+        <social type="email" href="mailto:vednovak@gmail.com">Email Vedran Novak</social>
+        <social type="github" href="https://github.com/NovakVed">Vedran Novak on GitHub</social>
+        <copyright>Vedran Novak</copyright>
+    </footer>
+</buildprofiles>
