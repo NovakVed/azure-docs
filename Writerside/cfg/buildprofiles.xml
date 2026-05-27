@@ -9,14 +9,10 @@
              GitHub Pages, so the bare /logo.svg 404s). JetBrains uses the
              same override in their intellij-sdk-docs buildprofiles. -->
         <images-prefix-override>images/</images-prefix-override>
-        <enable-browser-search>true</enable-browser-search>
-        <enable-fullscreen-mode>true</enable-fullscreen-mode>
-        <enable-page-feedback>true</enable-page-feedback>
         <noindex-content>false</noindex-content>
     </variables>
     <build-profile instance="azd">
         <variables>
-            <github-edit-page-base-url>https://github.com/NovakVed/azure-docs/edit/main/Writerside/topics/</github-edit-page-base-url>
             <web-root>https://novakved.github.io/azure-docs/</web-root>
         </variables>
     </build-profile>
