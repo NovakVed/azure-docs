@@ -35,8 +35,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
+      # JetBrains hasn't published a Node 24 build yet (v4 is the latest major),
+      # so this step still logs a Node 20 deprecation notice until they release one.
       - name: Build docs using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4
         with:
@@ -45,7 +47,7 @@ jobs:
           docker-version: ${{ env.DOCKER_VERSION }}
 
       - name: Save algolia-indexes (optional, for search)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: algolia-indexes
           path: artifacts/algolia-indexes-AZD.zip
@@ -53,7 +55,7 @@ jobs:
         continue-on-error: true
 
       - name: Save build artifact for diagnostics
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: webHelp
           # Bundle the zip AND report.json — the checker job needs the
@@ -69,7 +71,7 @@ jobs:
           unzip -O UTF-8 -qq "artifacts/${{ env.ARTIFACT }}" -d site
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -84,7 +86,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: webHelp
           path: artifacts
@@ -104,4 +106,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
