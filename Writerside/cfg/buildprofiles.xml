@@ -9,6 +9,7 @@
              GitHub Pages, so the bare /logo.svg 404s). JetBrains uses the
              same override in their intellij-sdk-docs buildprofiles. -->
         <images-prefix-override>images/</images-prefix-override>
+        <enable-browser-search>true</enable-browser-search>
         <noindex-content>false</noindex-content>
     </variables>
     <build-profile instance="azd">
