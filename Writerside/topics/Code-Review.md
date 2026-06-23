@@ -1,95 +1,71 @@
 # Code Review
 
-Review pull requests with IntelliJ's native diff viewer. Add inline comments, vote, mark files as viewed, and overlay review threads directly on your editor.
+Review pull requests with IntelliJ's native diff viewer: read the changes, leave inline comments and suggestions, vote, and track which files you've seen.
 
-## Detail view layout
+## The detail view
 
-Opening a PR creates a closable editor tab with three sub-tabs:
+Opening a PR creates a closable editor tab — a **single pane**, no sub-tabs. From top to bottom: the title and `!`-number with a **View Timeline** link, the source → target branches, the status checks (CI, conflicts, required reviewers and their votes), the **changed-files tree**, and the action bar.
 
-| Tab            | Contents                                                                                                              |
-|----------------|-----------------------------------------------------------------------------------------------------------------------|
-| **Overview**   | Title, description, source/target branches, status checks, branch policies, reviewers, work items, vote summary.      |
-| **Files**      | Full diff. Each file is rendered with IntelliJ's diff viewer.                                                         |
-| **Discussion** | Chronological timeline of every comment thread, vote, and PR event.                                                   |
+![A pull request open in the single-pane detail view](pr-detail.png){ width="720" border-effect="line" }
 
-## Reading the diff
+- **Changed files** live in the tree — click one to open the diff.
+- **Discussion** opens in its own tab via the **View Timeline** link — see [Discussions &amp; Comments](Discussions-and-Comments.md).
+- **Votes and actions** live in the action bar and its overflow menu — see [Pull Requests](Pull-Requests.md#open-and-act-on-a-pr).
 
-The **Files** tab shows a two-pane diff per file. The left pane is the target branch (base); the right pane is the source branch (head). Changed ranges are highlighted in green (added) and red (removed) with intra-line highlighting for character-level changes.
+## Read the diff
 
-### Navigating between files
+Clicking a file opens the diff in a single tab per PR — clicking another file swaps it in place, so <shortcut>F7</shortcut> / <shortcut>⇧F7</shortcut> step through every changed range across the whole PR. The diff tab carries a **Review:** toolbar with **Refresh**, **Submit review**, and **Previous / Next Comment**.
 
-- Use the file tree on the left of the Files tab.
-- Press <shortcut>F7</shortcut> / <shortcut>Shift+F7</shortcut> to step through changed ranges.
-- Press <shortcut>⌥↓</shortcut> / <shortcut>⌥↑</shortcut> (macOS) or <shortcut>Alt+↓</shortcut> / <shortcut>Alt+↑</shortcut> (Windows/Linux) to jump between files.
+| Navigate | macOS | Windows / Linux |
+|----------|-------|------------------|
+| Next / previous changed range | <shortcut>F7</shortcut> / <shortcut>⇧F7</shortcut> | <shortcut>F7</shortcut> / <shortcut>Shift+F7</shortcut> |
+| Next / previous comment | *Review: toolbar* | *Review: toolbar* |
 
-## Inline comments
+### Show or hide threads
 
-To leave a comment on a specific line:
+In the diff's gutter settings, the **Review Discussions** menu controls which inline threads render: **Show all discussions**, **Show only unresolved**, or **Don't show**.
+
+## Comment on a line
 
 <procedure title="Add an inline comment">
-    <step>Hover over the gutter of the changed range — a <b>+</b> icon appears.</step>
-    <step>Click it to open the comment editor inline beneath that line.</step>
-    <step>Type your comment. Markdown is supported (see <a href="Discussions-and-Comments.md">Discussions</a> for the formatting toolbar).</step>
-    <step>Click <b>Comment</b> to post.</step>
+    <step>Hover the gutter of a changed line — a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌘⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
+    <step>Type your comment. The editor is full markdown with a formatting toolbar, @mentions, and image paste — see <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a>.</step>
+    <step>Post it one of three ways: <b>immediately</b> as a comment, <b>queued</b> as part of a pending review to submit together, or wrapped as a <b>suggested change</b> the author can apply in one click.</step>
 </procedure>
 
-Existing comment threads appear as inline review-thread inlays anchored to their original line. Click a thread to expand it; click the chevron to collapse.
+![An inline comment open in the diff viewer](diff-comment.png){ width="720" border-effect="line" }
 
-### Adding a comment at the caret
+> **Pending review.** Comments you queue stay as drafts (counted on the **Submit (N)** button) until you submit them together with your vote — the same review flow GitHub users expect. Submit from the **Review:** toolbar or the overflow menu's **Submit Pending Comments**.
+> {style="note"}
 
-While the cursor is on a changed line, press <shortcut>⌘⇧M</shortcut> (macOS) / <shortcut>Ctrl+Shift+M</shortcut> (Windows/Linux) to open the comment editor without reaching for the mouse.
+## Vote
 
-## Vote on a PR
+The action bar's **Approve** button is a split button: its dropdown holds **Approve with suggestions**, **Wait for author**, **Reject**, and **Reset feedback**.
 
-From the Overview tab (or the toolbar of any detail tab) you can cast a review vote:
+![The Approve split-button vote options](vote-approve-dropdown.png){ width="380" border-effect="line" }
 
-| Vote                          | Effect                                                                                            |
-|-------------------------------|---------------------------------------------------------------------------------------------------|
-| **Approve**                   | You're satisfied with the PR. Counts toward required reviewer approvals.                          |
-| **Approve with suggestions**  | Approves, but flags non-blocking comments the author should consider.                             |
-| **Wait for author**           | You've left blocking feedback. Doesn't count as approval until cleared.                           |
-| **Reject**                    | The PR should not be merged in its current form.                                                  |
-| **Reset vote**                | Removes your previous vote — useful if you voted in error.                                        |
+Completing or abandoning a PR, including merge strategies, is covered in [Pull Requests](Pull-Requests.md#complete-a-pull-request).
 
-## Complete or abandon
+## Track files as viewed
 
-If you have permission to merge, the Overview tab shows:
+For large PRs, mark each file **viewed** as you go — viewed files dim in the changes tree.
 
-- **Complete** — opens a dialog where you choose the merge strategy (no fast-forward, squash, rebase, semi-linear), update commit message, and optionally delete the source branch.
-- **Abandon** — closes the PR without merging. Reversible from the Azure DevOps web UI.
+- Press <shortcut>⌘⇧S</shortcut> / <shortcut>Ctrl+Shift+S</shortcut>, or right-click → **Mark File as Viewed**.
+- Right-click with several files selected to **Mark All as Viewed**.
 
-> **Branch policies are honored**: if the target branch has required reviewers, required status checks, or other policies, you can't complete the PR until they're satisfied — the **Complete** button is disabled with a tooltip explaining why.
-> {style="warning"}
+![Mark File as Viewed in the changes tree](mark-file-viewed.png){ width="560" border-effect="line" }
 
-## File-viewed tracking
+> Want files to mark themselves viewed as you open them? Turn on **Mark files as viewed when their diff is opened** in [Settings](Settings.md) (off by default, matching GitHub).
+> {style="tip"}
 
-For large PRs, mark each file as **viewed** as you go to keep track of progress:
+## Review only what changed since an update {id="compare"}
 
-- Open a file in the diff and press <shortcut>⌘⇧S</shortcut> (macOS) / <shortcut>Ctrl+Shift+S</shortcut> (Windows/Linux).
-- Or click the **Viewed** toggle in the diff toolbar.
+When an author pushes new commits, you don't have to re-read the whole PR. From the overflow **⋮** menu, choose **Review Changes Since…**, pick an update, and the changes tree re-scopes to just that diff — target-branch commits merged in between are filtered out.
 
-Viewed files are visually collapsed in the file tree. If the author force-pushes new commits, files you'd marked as viewed are automatically reset to unviewed.
+![The iteration-scope banner above the changes tree](compare-updates-banner.png){ width="700" border-effect="line" }
+
+A banner — *"Reviewing only what changed since update N"* — sits above the tree; click **Show all changes** to return to the full PR. (The action appears once a PR has at least two updates.)
 
 ## Review in the editor instead
 
-When the PR's source branch is checked out locally, you can comment on changed lines directly in the regular code editor — no diff tab needed. See [Review in Editor](Review-in-Editor.md).
-
-## Thread visibility
-
-Use the diff toolbar's **Threads** menu to filter inline threads:
-
-- **All threads**
-- **Unresolved only** — default after the first read-through
-- **Hidden** — collapses every thread
-
-Use **Prev Comment** / **Next Comment** in the toolbar (or via *Find Action*) to skim only unresolved threads.
-
-## Keyboard reference
-
-| Action                       | macOS              | Windows / Linux            |
-|------------------------------|--------------------|----------------------------|
-| Add comment at caret         | <shortcut>⌘⇧M</shortcut>      | <shortcut>Ctrl+Shift+M</shortcut> |
-| Mark file viewed/unviewed    | <shortcut>⌘⇧S</shortcut>      | <shortcut>Ctrl+Shift+S</shortcut> |
-| Next changed range           | <shortcut>F7</shortcut>       | <shortcut>F7</shortcut>           |
-| Previous changed range       | <shortcut>⇧F7</shortcut>      | <shortcut>Shift+F7</shortcut>     |
-| Next file                    | <shortcut>⌥↓</shortcut>       | <shortcut>Alt+↓</shortcut>        |
+When the PR's source branch is checked out, you can comment on changed lines right in your normal editor — no diff tab needed. See [Review in Editor](Review-in-Editor.md).
