@@ -14,7 +14,7 @@ The Pull Requests tool window is hidden when no Azure DevOps Git remote is detec
 
 ## "401 Unauthorized" after signing in
 
-- The PAT may lack required scopes — see [required scopes](Authentication.md#required-scopes). Easiest fix: regenerate with **Full access**.
+- The PAT may lack required scopes — see [Authentication](Authentication.md). Easiest fix: regenerate with **Full access**.
 - The PAT may have expired. Tokens expire on the date you set when creating them.
 - Your organization may have disabled PATs — in that case use OAuth.
 
@@ -24,26 +24,18 @@ The PAT is valid but your Azure DevOps account doesn't have permission for the a
 
 ## OAuth browser doesn't return to the IDE
 
-The plugin registers a custom URL handler (`jetbrains://`) the first time you launch it. If your OS blocks or strips custom URL handlers:
+OAuth completes via a **local loopback redirect** — the browser is sent back to `http://127.0.0.1:<port>/azure-oauth/callback`, served by the IDE's built-in web server, which then shows *"Sign-in complete. You can close this tab."* If that round-trip fails:
 
-<tabs>
-    <tab title="macOS">
-        Check Default Browser settings, allow JetBrains Toolbox to register handlers.
-    </tab>
-    <tab title="Windows">
-        Registry entry for <code>jetbrains://</code> may be missing. Reinstall the IDE.
-    </tab>
-    <tab title="Linux">
-        <code>xdg-open</code> must be configured.
-    </tab>
-</tabs>
+- A firewall or security tool may be blocking localhost connections to the IDE's built-in server (port range **63342–63352**).
+- A blocked pop-up or a non-default browser can stop the redirect — make sure your intended browser is the default.
+- The sign-in window has a **5-minute** limit; if it lapsed, start over.
 
 Workaround: use a Personal Access Token instead of OAuth.
 
 ## PRs don't show new comments after sync
 
 <procedure>
-    <step>Click the <b>Reload</b> icon in the tool window toolbar — this forces a sync immediately.</step>
+    <step>Press <shortcut>⌘R</shortcut> / <shortcut>Ctrl+R</shortcut> / <shortcut>F5</shortcut> (or right-click → <b>Refresh List</b>) to force a sync immediately — there is no Reload toolbar button.</step>
     <step>Check the <b>idea.log</b> for sync errors (<a anchor="enabling-debug-logs">enable debug logs</a> for more detail).</step>
     <step>Sync interval is 60 s by default. If you've increased it in <a href="Settings.md">Settings</a>, expect a longer delay.</step>
 </procedure>
@@ -51,7 +43,7 @@ Workaround: use a Personal Access Token instead of OAuth.
 ## Inline comments don't appear in the diff
 
 - The plugin only renders inline threads on PRs you have **Code (Read)** permission for.
-- If you're viewing the diff from your local working tree (not the PR detail view), inline threads won't render — open the PR's **Files** tab instead.
+- If you're viewing the diff from your local working tree (not the PR), inline threads won't render — open the PR from the tool window so its changes tree and threads load.
 - If your local branch has diverged from the PR head, review-in-editor disables itself. Push your changes or check out the PR head exactly.
 
 ## Git push asks for a password

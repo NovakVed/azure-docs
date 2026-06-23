@@ -1,76 +1,50 @@
 # Statistics
 
-A dedicated editor tab that turns your PR history into useful metrics — without leaving the IDE or running custom Azure DevOps queries.
+A dedicated editor tab that turns your PR history into KPIs and charts — no custom Azure DevOps queries, no leaving the IDE.
 
-> **Computed from cached data, not live polling.** Statistics use whatever the tool window has already fetched — opening the panel is instant and makes no extra API calls. The numbers update as the 60-second background sync brings new data in.
+![The Pull Request Statistics dashboard](statistics-dashboard.png){ width="720" border-effect="line" }
+
+> **Computed from cached data, not live polling.** Statistics use whatever the tool window has already fetched — opening the panel is instant and makes no extra API calls. The numbers update as background sync brings new data in.
 > {style="note"}
 
-## Open the Statistics tab
+## Open it
 
-From the Pull Requests tool window toolbar, click the chart icon, or run *Find Action* → **Show Pull Request Statistics**. The tab opens in the editor area.
+Click the **Pull Request Statistics** (chart) icon in the tool-window toolbar, or run *Find Action* → **Pull Request Statistics**. The tab opens in the editor area; **Refresh statistics** recomputes it.
 
-## A typical day's numbers
+## KPI tiles
 
-For a team with ~15 active PRs, you might see something like:
+A row of headline numbers across the top:
 
-| KPI                    | Value     |
-|------------------------|-----------|
-| Created (last 30 days) | 42        |
-| Merged                 | 38        |
-| Abandoned              | 2         |
-| Open now               | 12        |
-| Merge rate             | 90%       |
-| **Median** merge time  | 18 h      |
-| Approval rate          | 76%       |
-| First response (h)     | 4 h       |
+| KPI | Meaning |
+|-----|---------|
+| **Created** · **Merged** · **Abandoned** · **Open now** | PR counts in the window |
+| **Merge rate** | Share of resolved PRs that merged |
+| **Median merge (h)** | Typical hours from creation to completion |
+| **Approval rate** | Share of reviewer votes that were Approved (incl. with suggestions) |
+| **First response (h)** | Median hours to the first non-author comment |
 
-The KPIs use **median**, not average, for time-based metrics — a couple of week-long stragglers shouldn't shift the typical-PR number. Where an average is shown, it's labelled explicitly.
+> Time-based KPIs use the **median**, not the average — a couple of week-long stragglers shouldn't skew the typical-PR number. Where an average is shown, it's labelled.
+> {style="note"}
 
-## Available metrics
+## Charts
 
-### Open PRs by author
+The charts are grouped into three sections:
 
-A horizontal bar chart of how many open PRs each author currently has. Useful for spotting unbalanced load on the team.
+- **Workload** — *Top creators*, *Top reviewers*, *Top commenters*, *Open PR aging*.
+- **Process health** — *Vote distribution*, *PR status*, *Time to merge*, *PR cycle time (days)*, *Review velocity*.
+- **Where work goes** — *Target branches*, *Daily activity*, *Day-of-week activity*, *PRs merged per week*, *Reviewer × Author* collaboration.
 
-### Vote distribution
+## Filter and scope
 
-A pie / donut chart of the current vote state across all open PRs:
+A sticky header scopes every metric at once:
 
-- **Approved**
-- **Approved with suggestions**
-- **Wait for author**
-- **Rejected**
-- **No vote**
-
-Hover a slice to see the PRs in that bucket; click to open them in a filtered list.
-
-### Time to merge
-
-Histogram (or average + median) of how long PRs take from creation to completion, computed over completed PRs in the current filter window.
-
-By default the window is the last 30 days; switch to 7, 90, or 365 days with the chips at the top of the tab.
-
-### Review velocity
-
-Median time from PR creation to first reviewer vote. Helps identify where PRs sit idle waiting for attention.
-
-## Filtering
-
-Statistics respect the same filters as the PR list, with a few extras specific to the panel:
-
-- **Time window** — Last 7 / 30 / 90 / 365 days, or all-time.
-- **Include drafts** — off by default.
-- **Repository** — same as the tool window filter.
-
-Changing a filter updates every metric on the panel.
+- **Window** — Last 7 days, 30 days, 90 days, 6 months, 1 year, or All time.
+- **Author**, **Reviewer**, **Target branch** — narrow to specific people or branches.
+- **Clear filters** — reset to the defaults.
 
 ## Caveats
 
-> **Local view only.** Statistics are calculated from the PRs your account has permission to see. If you don't have access to a repository, its PRs aren't counted.
+> **Local view only.** Statistics cover the PRs your account can see. Repositories you don't have access to aren't counted.
 > {style="warning"}
 
-The plugin is not a replacement for Azure DevOps Analytics. It gives you quick, in-editor signal — for org-wide reporting, use the Analytics service in Azure DevOps directly.
-
-## Export
-
-Right-click any chart to **Copy as image** (PNG) or **Copy data as CSV**. Useful for paste-into-Slack moments.
+This isn't a replacement for Azure DevOps Analytics — it's quick, in-editor signal. For org-wide reporting, use the Analytics service in Azure DevOps directly.

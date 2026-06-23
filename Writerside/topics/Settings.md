@@ -4,74 +4,60 @@ Reference for every setting the plugin exposes. Open **Settings** with <shortcut
 
 ## Version Control → Azure DevOps
 
-The main account management panel.
+The main page. At the top is the **accounts** panel (add **+**, edit ✏, remove ✕, per-project default) — see [Authentication](Authentication.md).
 
-- **Accounts** — list of every signed-in Azure DevOps account. Add (**+**), remove, or edit credentials per row.
-- **Default account for this project** — used when the project has remotes matching multiple accounts. Affects API calls and Git HTTPS auth handoff.
-- **Background sync interval** — how often the tool window polls Azure DevOps. **Default: 60 seconds.** Set higher on slower connections.
-- **Show drafts in PR list** — toggle whether draft PRs appear in the unfiltered list. **Default: on.**
-- **Mark files as viewed on open** — when enabled, simply opening a file in the diff marks it as viewed. **Default: off.**
+![The Azure DevOps settings page accounts panel](accounts-panel.png){ width="700" border-effect="line" }
 
-### Adding an account
+- **Sync interval (seconds)** — how often the tool window polls Azure DevOps. **Default 60**, range **15–3600**.
 
-Click **+**. The Add Account dialog asks for:
+### Polling & notifications
 
-| Field          | Description                                                                            |
-|----------------|----------------------------------------------------------------------------------------|
-| **Server URL** | `https://dev.azure.com` for cloud; your server URL for Azure DevOps Server.            |
-| **Organization** | Slug from the Azure DevOps URL (e.g. `my-company`).                                  |
-| **Auth method** | Personal Access Token or Microsoft Entra ID (OAuth).                                  |
-| **Token / Sign-in** | Paste the PAT, or launch the browser OAuth flow.                                  |
+| Setting | Default |
+|---------|---------|
+| **Notify when I'm asked to review a pull request** | On |
+| **Notify when someone @mentions me in a pull request** | On |
+| **Notify on replies in threads I participated in** | On |
+| **Notify when reviewer votes change on my PRs** | On |
+| **Offer Create PR after I push to an Azure DevOps remote** | On |
+| **Include my own pull requests and @mentions** | Off |
 
-See [Authentication](Authentication.md) for required PAT scopes.
+See [Notifications &amp; Attention](Notifications-and-Attention.md) for what these drive.
+
+### Pull request review
+
+| Setting | Default |
+|---------|---------|
+| **Mark files as viewed when their diff is opened** | Off |
+| **Show attention markers on pull-request rows** | Off |
+
+> **Show unread markers** isn't here — it's a tool-window toggle (gear menu), not a settings checkbox. Drafts are a list **filter**, not a setting.
+> {style="note"}
 
 ## Version Control → Azure DevOps → AI Settings
 
-A sub-page under the main Azure DevOps settings. Configures the optional AI helpers — see [AI Features](AI-Features.md) for what each does.
+A sub-page configuring the optional AI helpers — see [AI Features](AI-Features.md).
 
-- **Enable AI assistance** — master switch. **Default: off.** Off hides every AI affordance and makes zero outbound calls.
-- **Max diff size** — cap the diff payload sent to AI providers, in KB. Range 10-2000, **default 200.**
-- **Cache AI responses** — when on, identical requests for the same PR + diff return cached results. **Default: on.**
-- **AI Providers table** — one row per provider instance. Multiple rows of the same provider are allowed (e.g. two OpenAI configs). The first **enabled** row acts as the default.
-- **Per-Feature Provider** — pin each feature (Summarize / Review / Explain / Commit&nbsp;+&nbsp;Title) to a specific instance. Blank = use the default.
-- **Configure Prompts** — edit the built-in system prompt for each feature slot. Editing a prompt bumps the cache generation so cached responses are invalidated.
+![The AI Settings page](ai-settings.png){ width="720" border-effect="line" }
 
-> Switching providers mid-session bumps the cache generation: in-flight requests finish but their responses aren't cached. New requests use the new provider immediately.
-> {style="note"}
+- **General AI Settings → Enable AI assistance** — master switch. **Default off.** Off hides every AI affordance and makes zero outbound calls.
+- **AI Providers** — one row per provider instance (**Provider / Model / Enabled**). The first enabled row is the default. Add via the **Add AI Provider** dialog (OpenAI, Claude, Gemini, Ollama, GitHub Copilot; HTTP-API or CLI mode).
+- **Per-Feature Provider** — route **AI Summary**, **AI Review**, **Title + Description**, and **Explain Code** to specific instances, or leave them on **Default**.
+- **Configure Prompts** — edit the system prompt for each feature.
+- **Advanced** — **Cache AI responses per commit SHA** (default on), **Max diff size** (default 200 KB, range 10–2000), and **Clear AI Response Cache**.
 
-## Appearance & Behavior → Notifications
+## Appearance & Behavior → Notifications {id="notifications"}
 
-The plugin registers two notification groups:
+The plugin registers two notification groups you can route (popup / tool window / log-only):
 
-| Group                                  | What it's for                                                                         |
-|----------------------------------------|---------------------------------------------------------------------------------------|
-| `AzureDevOps.PullRequests`             | Toast notifications: status check results, push confirmations, refresh errors.        |
-| `AzureDevOps.PullRequests.Sticky`      | Sticky balloons: added as reviewer, policy failures.                                  |
-
-Each group has Popup / Tool window / Log-only settings; configure to taste.
+| Group | For |
+|-------|-----|
+| **Azure DevOps Pull Requests** | Review requests, @mentions, replies, vote changes, push offers. |
+| **Azure DevOps AI** | AI summary / review completion balloons. |
 
 ## Keymap
 
-Open <ui-path>Settings | Keymap</ui-path> and search for **Azure DevOps** to remap any of the plugin's actions. The full list with action IDs lives in [Keyboard Shortcuts](Keyboard-Shortcuts.md). Defaults:
-
-| Action                       | macOS              | Windows / Linux                  |
-|------------------------------|--------------------|----------------------------------|
-| Add Review Comment           | <shortcut>⌘⇧M</shortcut>      | <shortcut>Ctrl+Shift+M</shortcut> |
-| Mark File as Viewed          | <shortcut>⌘⇧S</shortcut>      | <shortcut>Ctrl+Shift+S</shortcut> |
-| Refresh List / Timeline / Details | <shortcut>F5</shortcut>  | <shortcut>F5</shortcut>           |
-| Open Current Branch PR       | *no default — bind it yourself* | *no default — bind it yourself* |
-
-## Search Everywhere
-
-Azure DevOps PRs are exposed as a Search Everywhere contributor. Configure its prominence in <ui-path>Settings | Advanced Settings | Search Everywhere</ui-path>.
-
-## Reset to defaults
-
-Each settings page has a **Restore Defaults** button at the bottom. Stored credentials are *not* deleted by this — use the Accounts panel to remove signed-in accounts.
+Open <ui-path>Settings | Keymap</ui-path> and search **Azure DevOps** to rebind any action. The full list with action IDs is in [Keyboard Shortcuts](Keyboard-Shortcuts.md).
 
 ## Per-project vs application-level
 
-Most settings are **application-level** (apply to every project): accounts, AI provider, notification preferences. Two settings are **per-project**:
-
-- **Default account** — which signed-in account is used for this project's API calls and Git HTTPS auth.
-- **PR list filters** — your last-used filters in the tool window are remembered per project.
+Most settings are **application-level** (every project): accounts, notification preferences, AI providers. Two are **per-project** (stored in the project's workspace): the **default account** and your **PR-list filters**.

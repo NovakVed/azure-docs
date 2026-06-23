@@ -1,98 +1,125 @@
 # Pull Requests
 
-The Pull Requests tool window is the entry point for everything: browse open PRs, search and filter, jump to a PR's detail view, or create a new one.
+The **Pull Requests** tool window is your command center: browse the queue, filter and search, open a PR, and act on it — complete, revert, compare, and more.
 
-## Tool window
+## Open the tool window
 
-The tool window appears in the left sidebar of the IDE whenever the open project has at least one Azure DevOps Git remote. If your project has no Azure DevOps remote, the tool window is hidden to reduce clutter.
+The tool window appears in the left sidebar whenever the open project has at least one Azure DevOps Git remote. (No Azure DevOps remote? It stays hidden to reduce clutter.)
 
-### Showing the tool window
-
-- Click the **Pull Requests** icon on the left toolbar.
+- Click the **Pull Requests** stripe icon in the sidebar.
 - Or use <ui-path>View | Tool Windows | Pull Requests</ui-path>.
 - Or run *Find Action* (<shortcut>⌘⇧A</shortcut> / <shortcut>Ctrl+Shift+A</shortcut>) and type **Pull Requests**.
 
-## Filtering the list
+![The Pull Requests tool window with the search field, filter chips, and a populated list](pr-tool-window.png){ width="720" border-effect="line" }
 
-A row of filter chips sits above the PR list. Click any chip to refine the list:
+## Find pull requests
 
-| Filter           | What it does                                                                  |
-|------------------|-------------------------------------------------------------------------------|
-| **State**        | Open · Draft · Completed · Abandoned · All                                    |
-| **Repository**   | Limit to one repo when the project has multiple Azure DevOps remotes          |
-| **Author**       | Show only PRs created by selected users                                       |
-| **Reviewer**     | Show only PRs where selected users are reviewers                              |
-| **Label**        | Filter by Azure DevOps PR labels                                              |
+### Quick Filters
 
-Filters persist **per project** across IDE restarts — your filter state in one project doesn't carry over to another. Click the **×** on a chip to clear it.
+Click the **filter icon** on the left of the chip row for one-click presets. A badge on the icon shows how many filters are active.
 
-### Common quick filters
+![The Quick Filters menu with its presets](quick-filters-menu.png){ width="380" border-effect="line" }
 
-- **Open · Reviewer: me** — what you need to review.
-- **Open · Author: me** — your own pending PRs.
-- **Draft** — work-in-progress PRs you've started but not published.
+| Preset | Shows |
+|--------|-------|
+| **Open pull requests** | All active PRs |
+| **Awaiting my review** | PRs where you're a reviewer who hasn't voted |
+| **Involving me** | PRs you authored, review, or were mentioned in |
+| **Clear N filter(s)** | Resets every active filter |
 
-## Sorting
+### Filter chips
 
-Click the sort icon in the toolbar to choose:
+A scrollable row of chips sits below the search field. Click any chip to refine the list:
 
-- **Created (newest)** — default
-- **Created (oldest)**
-- **Updated (newest)**
-- **PR number**
+| Chip | Options |
+|------|---------|
+| **State** | Active · Completed · Abandoned |
+| **Author** | Type-ahead search across users |
+| **Tags** | Azure DevOps PR labels (tags) |
+| **Assignee** | Type-ahead search across users |
+| **Review** | Approved · Approved with suggestions · Waiting for author · Rejected · Awaiting my review |
+| **Work Items** | Linked Azure Boards work items |
+| **Draft** | Drafts only · Non-drafts only |
+| **Sort** | Newest · Oldest · Most/Least commented · Recently/Least recently updated |
 
-## Background sync
+Filters persist **per project** across IDE restarts. To clear them, use the Quick Filters menu's **Clear N filter(s)**.
 
-The plugin polls Azure DevOps every **60 seconds** to keep the list up to date. New PRs, vote changes, and new comments appear without manual refresh.
+> **Search** — type in the field above the chips to match PR titles and descriptions. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear — selecting one opens it directly.
+> {style="tip"}
 
-If you've been notified that you've been added as a reviewer on a PR, a balloon notification appears in the lower-right corner — click it to jump straight to the PR.
+## Read a PR row
 
-To force an immediate refresh, click the **Reload** icon in the toolbar or press <shortcut>F5</shortcut> while the tool window is focused.
+Each row packs the status at a glance:
 
-> On cold start, the list shows its **last-known cached state** while the first sync runs in the background — so you can act on PRs immediately instead of staring at a spinner.
-> {style="note"}
+![The anatomy of a pull-request row](pr-row-anatomy.png){ width="640" border-effect="line" }
 
-## "Seen" tracking
+- **Title and `!`-number**, with a **status pill** when relevant: *Draft*, *Merged*, *Abandoned*, or *Has merge conflicts*.
+- **Reviewer vote icons** — approved, approved-with-suggestions, waiting, or rejected.
+- **An amber discussion badge** with the thread count (and how many are still unresolved).
+- **Attention chips** — *Review requested*, *Mentions you*, or *Replied* — when a PR wants your attention. These are off by default; see [Notifications &amp; Attention](Notifications-and-Attention.md) to turn them on.
 
-Unseen PRs (new since your last visit) render in **bold**; seen PRs render in the normal weight. Opening a PR's detail view marks it seen for the rest of the session. You can also **Mark as seen** / **unseen** from the right-click menu.
+Unread PRs can show a blue **unread marker** dot that reacts to new commits *and* new comment activity. Toggle it from the tool-window gear → **Show unread markers**.
 
-## Search Everywhere integration
+## Open and act on a PR
 
-Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere* and type a PR title or number — Azure DevOps PRs appear alongside your usual search results. Selecting one opens its detail view directly.
+**Click** a PR to open its single-pane detail view in an editor tab. The action bar at the bottom adapts to your role:
+
+| You are… | Primary actions |
+|----------|-----------------|
+| **Reviewer** | **Approve ▾** (split button: Approve with suggestions, Wait for author, Reject, Reset feedback) |
+| **Author, needs review** | **Request review** |
+| **Author, reviews in** | **Complete ▾** (Set auto-complete…, Mark as draft, Abandon) |
+| **Not involved** | **Set myself as reviewer** |
+
+Every state also shows a **⋮** (More) menu with the full action set:
+
+![The PR action bar overflow menu](pr-overflow-menu.png){ width="440" border-effect="line" }
+
+| Action | What it does |
+|--------|--------------|
+| **Share Pull Request…** | Email the PR to people (no reviewers added, no comment posted) |
+| **Submit Pending Comments (N)** | Post the comments you've queued as a review (only when N > 0) |
+| **Restart Merge** | Re-queue a stuck merge (conflicts / failed / policy-rejected) |
+| **Change Target Branch…** | Re-point the PR at a different target branch |
+| **Cherry-Pick…** | Create a branch with this PR's commits cherry-picked onto another branch |
+| **Review Changes Since…** | Re-scope the diff to what changed since a chosen update — see [Code Review](Code-Review.md#compare) |
+| **Revert…** | *(merged PRs)* Create a branch that reverts this PR's changes |
+| **Open on Web** · **Copy Link** | Jump to / copy the dev.azure.com URL |
+| **Summarize Pull Request** · **Run AI Review** | [AI assists](AI-Features.md) |
+
+### Complete a pull request
+
+Click **Complete** to open the **Complete Pull Request** dialog. Pick a **Merge type** — the live diagram shows the resulting history shape:
+
+![The Complete Pull Request dialog with the merge-strategy diagram](complete-pr-dialog.png){ width="560" border-effect="line" }
+
+- **Merge (no fast forward)** · **Squash commit** · **Rebase and fast-forward** · **Semi-linear merge**
+- **Post-completion options:** complete associated work items, delete the source branch, and optionally customize the merge commit message.
+
+> **Branch policies are honored.** If required reviewers or status checks aren't satisfied, the dialog lists the blockers. Only if you hold the bypass permission do you get **Override branch policies and enable merge** (with a required reason).
+> {style="warning"}
+
+Right-click any row for quick actions too: **View Pull Request**, **View Pull Request in Browser**, **Copy Pull Request URL**, and **Refresh List**.
 
 ## Create a pull request
 
-Click the **+** button in the tool window toolbar to open the Create PR wizard.
+Click **+** (Create Pull Request) in the tool-window toolbar. The form pre-fills the source branch (your current branch) and the default target branch. Add a title, description, reviewers, and work items — then create it (optionally as a **Draft**).
 
-### Wizard fields
+![Creating a pull request with AI-generated title and description](create-pr-ai.png){ width="640" border-effect="line" }
 
-- **Source branch** — defaults to your current Git branch.
-- **Target branch** — defaults to the repository's default branch (typically `main`).
-- **Title** — pre-filled from the last commit on the source branch.
-- **Description** — markdown supported.
-- **Reviewers** — start typing a name; the plugin offers @-mention-style autocomplete.
-- **Work items** — attach Azure Boards work items by ID or by search.
-- **Draft** — check this to create the PR as a draft (not yet ready for review).
-
-> **AI-assisted titles & descriptions**: if you have an [AI provider configured](AI-Features.md), the wizard exposes a **Generate** button that drafts a PR title and description from your commits.
+> With an [AI provider configured](AI-Features.md), the title and description fields gain a **Generate** action that drafts both from your branch's diff.
 > {style="tip"}
 
-## Current branch shortcut
+## Refresh and background sync
 
-If you're already checked out on the branch you want to review, you don't have to scroll the PR list. The action **Open Current Branch PR** (in <ui-path>VCS | Azure DevOps</ui-path>, or via *Find Action*) jumps you straight to the PR associated with your current branch.
+Azure DevOps has no webhooks, so the plugin polls. The list updates on its own, but you can refresh on demand:
 
-The current branch's PR is also shown in the Git status bar widget — see [Git Integration](Git-Integration.md).
+- Press <shortcut>⌘R</shortcut> / <shortcut>Ctrl+R</shortcut> or <shortcut>F5</shortcut> while the tool window is focused.
+- Or right-click a row → **Refresh List**.
 
-## Context menu actions
+> The polling cadence is the **Sync interval** in [Settings](Settings.md) (default 60 s). On cold start the list shows its **last-known cached state** while the first sync runs, so you can act immediately instead of waiting on a spinner.
+> {style="note"}
 
-Right-click any PR in the list for quick actions:
+## Switch account or repository
 
-- **Open** — open the detail view (same as double-click).
-- **Open in browser** — open in the Azure DevOps web UI.
-- **Copy link**
-- **Mark as seen** / **unseen**
-- **Reload**
-
-## Detail view tabs
-
-Each PR detail view is a closable editor tab with three sections — see [Code Review](Code-Review.md) for details on each one.
+For projects bound to multiple orgs or repos, use the tool-window gear → **Switch Account / Repository…**. The current branch's PR is also shown in the Git branch widget and the status bar — see [Git Integration](Git-Integration.md).

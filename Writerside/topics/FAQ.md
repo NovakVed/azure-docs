@@ -41,9 +41,9 @@ Uncheck **Enable AI assistance** at the top of <ui-path>Settings | Version Contr
 
 You can also leave AI on and route every feature to a local **Ollama** instance for fully on-device inference.
 
-## How do I export PR metrics?
+## Where do I see PR metrics?
 
-Right-click any chart in the [Statistics](Statistics.md) tab → **Copy data as CSV**.
+The [Statistics](Statistics.md) tab shows KPIs and charts — time-to-merge, review velocity, vote distribution, and more — computed locally from cached data. It's a view-only dashboard; for exportable, org-wide reporting use Azure DevOps Analytics.
 
 ## What's the memory and CPU footprint?
 
