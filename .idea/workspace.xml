@@ -34,6 +34,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="87" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -156,46 +157,28 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: [
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/AI-Features.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Authentication.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Code-Review.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Discussions-and-Comments.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/FAQ.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Git-Integration.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Installation.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Keyboard-Shortcuts.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Privacy-and-Data.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Pull-Requests.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Quick-Start.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Review-in-Editor.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Settings.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Statistics.md&quot;,
-      &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/topics/Troubleshooting.md&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Writerside/images" />
@@ -204,8 +187,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -220,6 +203,7 @@
       <workItem from="1779914795816" duration="2234000" />
       <workItem from="1779917049272" duration="1767000" />
       <workItem from="1779995407530" duration="35000" />
+      <workItem from="1782667795796" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="chore: cleanup and update logo">
       <option name="closed" value="true" />
@@ -229,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779917094392</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: cleanup and update logo">
+      <option name="closed" value="true" />
+      <created>1782667824271</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782667824271</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
