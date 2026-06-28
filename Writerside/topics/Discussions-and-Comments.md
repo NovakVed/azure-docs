@@ -6,13 +6,13 @@ Have full conversations in pull requests without leaving the IDE: a markdown edi
 
 The same threads show up in three places:
 
-- **Inline in the diff** — anchored to the line they reference. See [Code Review](Code-Review.md).
-- **The timeline** — a chronological view of every thread and PR event. Open it from the **View Timeline** link in the PR detail view. (Use **Find in timeline** to search it.)
-- **In the editor** — overlaid on your normal editor when the PR's branch is checked out. See [Review in Editor](Review-in-Editor.md).
+- **Inline in the diff** - anchored to the line they reference. See [Code Review](Code-Review.md).
+- **The timeline** - a chronological view of every thread and PR event. Open it from the **View Timeline** link in the PR detail view. (Use **Find in timeline** to search it.)
+- **In the editor** - overlaid on your normal editor when the PR's branch is checked out. See [Review in Editor](Review-in-Editor.md).
 
 ## The comment editor
 
-Every comment editor — timeline, diff inlay, inline edit, and the Create-PR description — shares one GitHub-style composer. A **Write | Preview** tab strip sits at the top-left; the formatting toolbar runs along the same top strip, pushed flush-right beside the tabs, with **Polish grammar &amp; spelling with AI** pinned at the far right behind a separator. A muted **Add files** link sits on the bottom row, to the left of the submit buttons.
+Every comment editor - timeline, diff inlay, inline edit, and the Create-PR description - shares one GitHub-style composer. A **Write | Preview** tab strip sits at the top-left; the formatting toolbar runs along the same top strip, pushed flush-right beside the tabs, with **Polish grammar &amp; spelling with AI** pinned at the far right behind a separator. A muted **Add files** link sits on the bottom row, to the left of the submit buttons.
 
 ![The comment composer with the Write | Preview tabs and top formatting toolbar strip, and the Add files link on the bottom row beside the submit buttons](comment-toolbar.png){ width="640" border-effect="line" }
 
@@ -25,7 +25,7 @@ Every comment editor — timeline, diff inlay, inline edit, and the Create-PR de
 
 In the diff/editor inlays you also get **Insert code suggestion**. Keyboard: <shortcut>⌘B</shortcut> bold, <shortcut>⌘I</shortcut> italic, <shortcut>⌘E</shortcut> inline code, <shortcut>⌘K</shortcut> link, <shortcut>⌘↵</shortcut> submit (or <shortcut>Ctrl</shortcut> equivalents).
 
-Click **Preview** to swap the editor for a rendered view of your markdown — the same rendering a posted comment uses, so what you preview matches what you'll post. The formatting toolbar hides while Preview is showing; click **Write** to return to editing. An empty draft previews as *Nothing to preview*.
+Click **Preview** to swap the editor for a rendered view of your markdown - the same rendering a posted comment uses, so what you preview matches what you'll post. The formatting toolbar hides while Preview is showing; click **Write** to return to editing. An empty draft previews as *Nothing to preview*.
 
 > **Polish grammar &amp; spelling with AI** rewrites your draft (or selection) in place as one undoable edit. It needs an [AI provider configured](AI-Features.md); when AI is off, the button is hidden.
 > {style="tip"}
@@ -43,7 +43,7 @@ Click an existing `@mention` to open a small **author card** with the person's a
 
 Three ways to attach an image:
 
-- **Add files** — click the **Add files** link on the bottom row (left of the submit buttons) to pick image files from disk.
+- **Add files** - click the **Add files** link on the bottom row (left of the submit buttons) to pick image files from disk.
 - **Paste** an image from the clipboard (<shortcut>⌘V</shortcut> / <shortcut>Ctrl+V</shortcut>).
 - **Drag &amp; drop** image files onto the editor.
 
@@ -59,10 +59,10 @@ The thread renders a **Suggested change** card with **Apply Locally** (and **Com
 
 ## Reply, resolve, and manage threads
 
-- **Reply** — add a follow-up. Azure DevOps threads are flat; your reply lands at the end of the thread.
-- **Resolve / Reopen** — close a thread when it's done, or reopen it. Resolved threads are de-emphasized and hidden when the diff filter is set to *Show only unresolved*.
-- **👍 Thumbs up** — a like button on the reactions row below the comment body (shared with **Reply** / **Resolve** on review threads). It shows a count once there's at least one like and turns gold when you've liked; its tooltip toggles between **Thumbs up** and **Remove thumbs up**.
-- **More actions (⋯)** — the overflow menu in the comment header. On any comment: **Copy link**, **Copy Markdown**, and **Quote reply** (inserts the comment as a `>` block quote into this thread's reply editor) plus **Hide** — a local-only collapse that hides the body in place and survives rebuilds and restarts. On your own comments you also get **Edit** and **Delete**.
+- **Reply** - add a follow-up. Azure DevOps threads are flat; your reply lands at the end of the thread.
+- **Resolve / Reopen** - close a thread when it's done, or reopen it. Resolved threads are de-emphasized and hidden when the diff filter is set to *Show only unresolved*.
+- **👍 Thumbs up** - a like button on the reactions row below the comment body (shared with **Reply** / **Resolve** on review threads). It shows a count once there's at least one like and turns gold when you've liked; its tooltip toggles between **Thumbs up** and **Remove thumbs up**.
+- **More actions (⋯)** - the overflow menu in the comment header. On any comment: **Copy link**, **Copy Markdown**, and **Quote reply** (inserts the comment as a `>` block quote into this thread's reply editor) plus **Hide** - a local-only collapse that hides the body in place and survives rebuilds and restarts. On your own comments you also get **Edit** and **Delete**.
 
 ### Thread status
 

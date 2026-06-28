@@ -1,6 +1,6 @@
 # Authentication
 
-The plugin signs in two ways — a **Personal Access Token (PAT)** or **Microsoft Entra ID (OAuth)**. Both store credentials in the IDE's system-backed keychain.
+The plugin signs in two ways - a **Personal Access Token (PAT)** or **Microsoft Entra ID (OAuth)**. Both store credentials in the IDE's system-backed keychain.
 
 ## Which method should I use?
 
@@ -26,7 +26,7 @@ You can let the plugin take you there: the login dialog's **Generate…** button
     <step>Open Azure DevOps, click your avatar (top right) → <b>Personal access tokens</b>.</step>
     <step>Click <b>+ New Token</b>, set a name, organization, and expiry.</step>
     <step>Grant the scopes below (or just pick <b>Full access</b>).</step>
-    <step>Click <b>Create</b> and copy the token — Azure DevOps shows it only once.</step>
+    <step>Click <b>Create</b> and copy the token - Azure DevOps shows it only once.</step>
 </procedure>
 
 The plugin uses these scopes (the login dialog lists them):
@@ -48,8 +48,8 @@ The plugin uses these scopes (the login dialog lists them):
     <step>In the Pull Requests tool window (or <ui-path>Settings | Version Control | Azure DevOps</ui-path>), click <b>+</b> → <b>Log In with Token…</b>.</step>
     <step>Fill in the two fields:
         <ul>
-            <li><b>Server</b> — a full URL (<code>https://dev.azure.com/your-org</code>), a bare org slug (<code>your-org</code>), a legacy <code>visualstudio.com</code> URL, or an on-prem URL (<code>https://tfs.example.com/tfs/your-collection</code>). There is no separate organization field — the org is read from this one.</li>
-            <li><b>Token</b> — paste the PAT.</li>
+            <li><b>Server</b> - a full URL (<code>https://dev.azure.com/your-org</code>), a bare org slug (<code>your-org</code>), a legacy <code>visualstudio.com</code> URL, or an on-prem URL (<code>https://tfs.example.com/tfs/your-collection</code>). There is no separate organization field - the org is read from this one.</li>
+            <li><b>Token</b> - paste the PAT.</li>
         </ul>
     </step>
     <step>Click <b>Log In</b>. The plugin validates the token ("Validating credentials…") and your tool window populates.</step>
@@ -61,11 +61,11 @@ The plugin uses these scopes (the login dialog lists them):
 
 <procedure title="Rotate a token">
     <step>In Azure DevOps, create a new token with the same scopes and copy it.</step>
-    <step>In <ui-path>Settings | Version Control | Azure DevOps</ui-path>, click the <b>pencil</b> icon on the account row and paste the new token. (The Server field is locked while editing — only the token changes.)</step>
+    <step>In <ui-path>Settings | Version Control | Azure DevOps</ui-path>, click the <b>pencil</b> icon on the account row and paste the new token. (The Server field is locked while editing - only the token changes.)</step>
     <step>Back in Azure DevOps, revoke the old token.</step>
 </procedure>
 
-If a token is revoked or expires, the plugin shows **Log In Again** in the tool window — click it to paste a fresh token.
+If a token is revoked or expires, the plugin shows **Log In Again** in the tool window - click it to paste a fresh token.
 
 ## Sign in with Microsoft (OAuth)
 
@@ -85,10 +85,10 @@ Refresh tokens renew automatically (with a 60-second leeway before expiry), so y
 
 | Tier | What you get | What you don't |
 |------|--------------|----------------|
-| **Full access** *(recommended)* | Pull requests, comments, votes, status checks, **plus** avatars, @-mention search, and linked work items. | — |
+| **Full access** *(recommended)* | Pull requests, comments, votes, status checks, **plus** avatars, @-mention search, and linked work items. | - |
 | **Standard access** | Pull requests and comments only. | Avatars show as initials; @-mention autocomplete returns nothing; work-item links don't render. |
 
-> To change tiers later, remove the account and sign in again — the picker reappears on every fresh sign-in.
+> To change tiers later, remove the account and sign in again - the picker reappears on every fresh sign-in.
 > {style="tip"}
 
 ## Multiple accounts
@@ -97,14 +97,14 @@ Sign into several Azure DevOps organizations at once. Each row in <ui-path>Setti
 
 ![The Azure DevOps accounts panel in Settings](accounts-panel.png){ width="700" border-effect="line" }
 
-Each project remembers its own **default account** (stored in the project's workspace) — the one used for that project's API calls and Git HTTPS handoff.
+Each project remembers its own **default account** (stored in the project's workspace) - the one used for that project's API calls and Git HTTPS handoff.
 
 ## Credential storage
 
 PATs and OAuth refresh tokens live in the IDE's PasswordSafe, backed by the OS keychain:
 
 <tabs>
-    <tab title="macOS">Keychain — one entry per signed-in account.</tab>
+    <tab title="macOS">Keychain - one entry per signed-in account.</tab>
     <tab title="Windows">Credential Manager (DPAPI-encrypted).</tab>
     <tab title="Linux">KWallet / Secret Service if available, otherwise an encrypted file in the IDE config directory.</tab>
 </tabs>
@@ -121,7 +121,7 @@ In <ui-path>Settings | Version Control | Azure DevOps</ui-path>, click the **✕
 |---------|--------------|
 | **Token invalid or expired** | Wrong/expired PAT, or missing scopes. Create a new one with at least *Code (Read &amp; write)*. |
 | **Organisation not found** | The Server field's org doesn't exist or you can't access it. |
-| **Couldn't reach Azure DevOps** | Network/proxy issue — check <ui-path>Settings &#124; System Settings &#124; HTTP Proxy</ui-path>. |
-| **403 Forbidden** on an action | Your account lacks the project/repo permission — ask your org admin. |
+| **Couldn't reach Azure DevOps** | Network/proxy issue - check <ui-path>Settings &#124; System Settings &#124; HTTP Proxy</ui-path>. |
+| **403 Forbidden** on an action | Your account lacks the project/repo permission - ask your org admin. |
 
 For more, see [Troubleshooting](Troubleshooting.md).

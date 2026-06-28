@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb75845-49ec-496c-85be-7b837a6a18e8" name="Changes" comment="chore: cleanup and update logo" />
+    <list default="true" id="cfb75845-49ec-496c-85be-7b837a6a18e8" name="Changes" comment="chore: cleanup">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-docs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-docs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/SCREENSHOTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/SCREENSHOTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/AI-Features.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/AI-Features.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Authentication.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Authentication.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Code-Review.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Code-Review.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Discussions-and-Comments.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Discussions-and-Comments.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/FAQ.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/FAQ.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Git-Integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Git-Integration.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Installation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Keyboard-Shortcuts.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Keyboard-Shortcuts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Notifications-and-Attention.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Notifications-and-Attention.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Privacy-and-Data.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Privacy-and-Data.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Pull-Requests.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Pull-Requests.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Quick-Start.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Quick-Start.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Review-in-Editor.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Review-in-Editor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Settings.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Settings.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Statistics.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Statistics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Troubleshooting.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Troubleshooting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Welcome.topic" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Welcome.topic" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,8 +58,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="87" />
-    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+    <option name="cachedIndexableFilesCount" value="63" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,10 +69,35 @@
     &quot;assignee&quot;: &quot;NovakVed&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1782678916" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="docs/accuracy-audit-and-screenshots" />
+                    <option name="lastUsedInstant" value="1782678915" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NovakVed/azure-docs.git&quot;,
-    &quot;accountId&quot;: &quot;8a607cee-5d2b-4d6b-83d6-53308ddb9c07&quot;
+    &quot;accountId&quot;: &quot;0df3ab0d-cb71-4724-b6ce-8c4753c4fd05&quot;
   }
 }</component>
   <component name="InstanceColorv3">
@@ -93,60 +141,63 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000000000000075" />
-      <entry key="S5" value="1.0000071823052115" />
-      <entry key="S10" value="1.00415993922622" />
-      <entry key="S30" value="1.3531912819870224" />
-      <entry key="S60" value="2.191187239633839" />
-      <entry key="M2" value="3.918055502724022" />
-      <entry key="M5" value="9.44584586114804" />
-      <entry key="M10" value="14.992542307425914" />
-      <entry key="M15" value="17.842895225376367" />
-      <entry key="M30" value="21.43988811338099" />
-      <entry key="H1" value="23.583634782507797" />
-      <entry key="H2" value="24.75550741416394" />
-      <entry key="H4" value="25.36838031996286" />
-      <entry key="D1" value="25.89340225461287" />
-      <entry key="W1" value="25.984738889186694" />
+      <entry key="S2" value="1.0000631134724662" />
+      <entry key="S5" value="1.034860713737579" />
+      <entry key="S10" value="1.350951491152603" />
+      <entry key="S30" value="2.894787532936774" />
+      <entry key="S60" value="4.397114166119708" />
+      <entry key="M2" value="6.57059039886377" />
+      <entry key="M5" value="12.386121394755659" />
+      <entry key="M10" value="18.20186123592764" />
+      <entry key="M15" value="21.225878543668777" />
+      <entry key="M30" value="25.074412297530504" />
+      <entry key="H1" value="27.383861487432974" />
+      <entry key="H2" value="28.650955868545143" />
+      <entry key="H4" value="29.314883530913672" />
+      <entry key="D1" value="29.884311686361265" />
+      <entry key="W1" value="29.983435900004057" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.0989059321024E-311" />
-      <entry key="MS500" value="7.318104301632688E-63" />
-      <entry key="S2" value="2.924823400782147E-16" />
-      <entry key="S5" value="6.115611089526406E-7" />
-      <entry key="S10" value="7.820237265918731E-4" />
-      <entry key="S30" value="0.09213118205436883" />
-      <entry key="S60" value="0.3035311879434613" />
-      <entry key="M2" value="0.5509366460342435" />
-      <entry key="M5" value="0.7878447844569223" />
-      <entry key="M10" value="0.8876062102401729" />
-      <entry key="M15" value="0.9235921254014237" />
-      <entry key="M30" value="0.9610370052195824" />
-      <entry key="H1" value="0.9803249487897278" />
-      <entry key="H2" value="0.990113603981749" />
-      <entry key="H4" value="0.9950445236177874" />
-      <entry key="D1" value="0.9991723767575098" />
-      <entry key="W1" value="0.9998817261503768" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="8.56079189170505E-87" />
+      <entry key="S2" value="3.0417847969372025E-22" />
+      <entry key="S5" value="2.4731553315789218E-9" />
+      <entry key="S10" value="4.9730828784355916E-5" />
+      <entry key="S30" value="0.036774086983566705" />
+      <entry key="S60" value="0.19176570857055408" />
+      <entry key="M2" value="0.4379106171018854" />
+      <entry key="M5" value="0.7187108312628429" />
+      <entry key="M10" value="0.8477681471150251" />
+      <entry key="M15" value="0.895745695752859" />
+      <entry key="M30" value="0.9464384268154261" />
+      <entry key="H1" value="0.9728506703577" />
+      <entry key="H2" value="0.9863319270700406" />
+      <entry key="H4" value="0.9931424505427412" />
+      <entry key="D1" value="0.9988537956446345" />
+      <entry key="W1" value="0.999836176027761" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0017002940689377426" />
-      <entry key="MS500" value="0.27932178451805495" />
-      <entry key="S2" value="0.7269862586602293" />
-      <entry key="S5" value="0.8802665390967522" />
-      <entry key="S10" value="0.9429902081046565" />
-      <entry key="S30" value="1.4171720937116608" />
-      <entry key="S60" value="2.4722301374425992" />
-      <entry key="M2" value="4.452618493632323" />
-      <entry key="M5" value="10.224583451211464" />
-      <entry key="M10" value="15.874738496036818" />
-      <entry key="M15" value="18.762611153612728" />
-      <entry key="M30" value="22.39882184420601" />
-      <entry key="H1" value="24.562859640427433" />
-      <entry key="H2" value="25.745057809038705" />
-      <entry key="H4" value="26.363139805718884" />
-      <entry key="D1" value="26.892526635571564" />
-      <entry key="W1" value="26.984613746638225" />
+      <entry key="MS100" value="0.7219645977612481" />
+      <entry key="MS500" value="0.9369214468724255" />
+      <entry key="S2" value="0.9838825897183757" />
+      <entry key="S5" value="1.0240507337515563" />
+      <entry key="S10" value="1.329305817914448" />
+      <entry key="S30" value="2.900385249930141" />
+      <entry key="S60" value="4.56085330032864" />
+      <entry key="M2" value="6.987334750462508" />
+      <entry key="M5" value="13.092921330130237" />
+      <entry key="M10" value="19.042599642994997" />
+      <entry key="M15" value="22.116609325295435" />
+      <entry key="M30" value="26.018144578661378" />
+      <entry key="H1" value="28.355301271404755" />
+      <entry key="H2" value="29.636566701150652" />
+      <entry key="H4" value="30.30766135870679" />
+      <entry key="D1" value="30.883104131045037" />
+      <entry key="W1" value="30.98326329719939" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -157,28 +208,28 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vedrannovak/Developer/azure-plugin-test/azure-docs/Writerside/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Writerside/images" />
@@ -188,7 +239,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -204,6 +254,7 @@
       <workItem from="1779917049272" duration="1767000" />
       <workItem from="1779995407530" duration="35000" />
       <workItem from="1782667795796" duration="625000" />
+      <workItem from="1782679151161" duration="848000" />
     </task>
     <task id="LOCAL-00001" summary="chore: cleanup and update logo">
       <option name="closed" value="true" />
@@ -229,7 +280,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: cleanup and update logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: cleanup and update logo" />
+    <MESSAGE value="chore: cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: cleanup" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

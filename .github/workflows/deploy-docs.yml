@@ -58,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: webHelp
-          # Bundle the zip AND report.json — the checker job needs the
+          # Bundle the zip AND report.json - the checker job needs the
           # report to surface broken links / missing topics.
           path: |
             artifacts/${{ env.ARTIFACT }}
@@ -76,7 +76,7 @@ jobs:
           path: site
 
   # Advisory: surface broken links and structural issues, but don't block
-  # deploys on them. The checker is stricter than the builder — it expects
+  # deploys on them. The checker is stricter than the builder - it expects
   # `<a>` in section-starting-page groups where `<card>` (which the builder
   # accepts and renders correctly) was used.
   test:

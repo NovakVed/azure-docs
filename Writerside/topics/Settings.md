@@ -4,11 +4,11 @@ Reference for every setting the plugin exposes. Open **Settings** with <shortcut
 
 ## Version Control → Azure DevOps
 
-The main page. At the top is the **accounts** panel (add **+**, edit ✏, remove ✕, per-project default) — see [Authentication](Authentication.md).
+The main page. At the top is the **accounts** panel (add **+**, edit ✏, remove ✕, per-project default) - see [Authentication](Authentication.md).
 
 ![The Azure DevOps settings page accounts panel](accounts-panel.png){ width="700" border-effect="line" }
 
-- **Sync interval (seconds)** — how often the tool window polls Azure DevOps. **Default 60**, range **15–3600**.
+- **Sync interval (seconds)** - how often the tool window polls Azure DevOps. **Default 60**, range **15–3600**.
 
 ### Polling & notifications
 
@@ -31,9 +31,9 @@ See [Notifications &amp; Attention](Notifications-and-Attention.md) for what the
 | **Show attention markers on pull-request rows** | Off |
 | **Show keyboard shortcut on comment buttons** | On |
 
-The last toggle shows the submit shortcut (<shortcut>⌘↵</shortcut> / <shortcut>Ctrl+Enter</shortcut>) just before a composer's **Comment** / **Reply** / **Save** button label. The shortcut works either way — this only shows the hint.
+The last toggle shows the submit shortcut (<shortcut>⌘↵</shortcut> / <shortcut>Ctrl+Enter</shortcut>) just before a composer's **Comment** / **Reply** / **Save** button label. The shortcut works either way - this only shows the hint.
 
-> **Show unread markers** isn't here — it's a tool-window toggle (gear menu), not a settings checkbox. Drafts are a list **filter**, not a setting.
+> **Show unread markers** isn't here - it's a tool-window toggle (gear menu), not a settings checkbox. Drafts are a list **filter**, not a setting.
 > {style="note"}
 
 ### Go to Pull Requests
@@ -46,15 +46,15 @@ Controls how **Go to Pull Requests** opens. While on, the action adds a **Pull R
 
 ## Version Control → Azure DevOps → AI Settings
 
-A sub-page configuring the optional AI helpers — see [AI Features](AI-Features.md).
+A sub-page configuring the optional AI helpers - see [AI Features](AI-Features.md).
 
 ![The AI Settings page](ai-settings.png){ width="720" border-effect="line" }
 
-- **General AI Settings → Enable AI assistance** — master switch. **Default off.** Off hides every AI affordance and makes zero outbound calls.
-- **AI Providers** — one row per provider instance (**Provider / Model / Enabled**). The first enabled row is the default. Add via the **Add AI Provider** dialog (OpenAI, Claude, Gemini, Ollama, GitHub Copilot; HTTP-API or CLI mode).
-- **Per-Feature Provider** — route **AI Summary**, **AI Review**, **Title + Description**, and **Explain Code** to specific instances, or leave them on **Default**.
-- **Configure Prompts** — edit the system prompt for each feature.
-- **Advanced** — **Cache AI responses per commit SHA** (default on), **Max diff size** (default 200 KB, range 10–2000), and **Clear AI Response Cache**.
+- **General AI Settings → Enable AI assistance** - master switch. **Default off.** Off hides every AI affordance and makes zero outbound calls.
+- **AI Providers** - one row per provider instance (**Provider / Model / Enabled**). The first enabled row is the default. Add via the **Add AI Provider** dialog (OpenAI, Claude, Gemini, Ollama, GitHub Copilot; HTTP-API or CLI mode).
+- **Per-Feature Provider** - route **AI Summary**, **AI Review**, **Title + Description**, and **Explain Code** to specific instances, or leave them on **Default**.
+- **Configure Prompts** - edit the system prompt for each feature.
+- **Advanced** - **Cache AI responses per commit SHA** (default on), **Max diff size** (default 200 KB, range 10–2000), and **Clear AI Response Cache**.
 
 ## Appearance & Behavior → Notifications {id="notifications"}
 

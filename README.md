@@ -1,4 +1,4 @@
-# Azure DevOps Pull Requests — Documentation
+# Azure DevOps Pull Requests - Documentation
 
 User-facing documentation for the **Azure DevOps Pull Requests** JetBrains IDE plugin.
 
@@ -8,14 +8,14 @@ User-facing documentation for the **Azure DevOps Pull Requests** JetBrains IDE p
 
 ## What's in this repo
 
-- [`Writerside/`](Writerside/) — Writerside source for the published documentation site.
-- [`Writerside/README.md`](Writerside/README.md) — the authoring guide (folder layout, build instructions, contribution tips).
-- [`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml) — builds the site with JetBrains' Writerside Docker action and publishes to GitHub Pages on every push to `main` that touches `Writerside/**`.
+- [`Writerside/`](Writerside/) - Writerside source for the published documentation site.
+- [`Writerside/README.md`](Writerside/README.md) - the authoring guide (folder layout, build instructions, contribution tips).
+- [`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml) - builds the site with JetBrains' Writerside Docker action and publishes to GitHub Pages on every push to `main` that touches `Writerside/**`.
 
 ## Filing issues
 
-- **Documentation bugs** (typos, missing pages, unclear instructions, broken links) — file them here.
-- **Plugin bugs** (crashes, wrong behavior, feature requests for the plugin itself) — file them on the JetBrains Marketplace listing or wherever the plugin's main repository lives.
+- **Documentation bugs** (typos, missing pages, unclear instructions, broken links) - file them here.
+- **Plugin bugs** (crashes, wrong behavior, feature requests for the plugin itself) - file them on the JetBrains Marketplace listing or wherever the plugin's main repository lives.
 
 ## Editing
 

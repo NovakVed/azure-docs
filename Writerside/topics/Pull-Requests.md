@@ -1,6 +1,6 @@
 # Pull Requests
 
-The **Pull Requests** tool window is your command center: browse the queue, filter and search, open a PR, and act on it — complete, revert, compare, and more.
+The **Pull Requests** tool window is your command center: browse the queue, filter and search, open a PR, and act on it - complete, revert, compare, and more.
 
 ## Open the tool window
 
@@ -44,12 +44,12 @@ A scrollable row of chips sits below the search field. Click any chip to refine 
 
 Filters persist **per project** across IDE restarts. To clear them, use the Quick Filters menu's **Clear N filter(s)**.
 
-> **Search** — type in the field above the chips to match PR titles and descriptions. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear — selecting one opens it directly.
+> **Search** - type in the field above the chips to match PR titles and descriptions. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear - selecting one opens it directly.
 > {style="tip"}
 
 ### Jump to a specific PR
 
-When you already know which PR you want, skip the list. **Go to Pull Requests…** fuzzy-searches every cached PR — by **id, title, author, or repo** — and opens it straight on its timeline. An empty search lists every cached PR (unread first, then newest).
+When you already know which PR you want, skip the list. **Go to Pull Requests…** fuzzy-searches every cached PR - by **id, title, author, or repo** - and opens it straight on its timeline. An empty search lists every cached PR (unread first, then newest).
 
 - Press <shortcut>⌘⇧P</shortcut> / <shortcut>Ctrl+Shift+P</shortcut>.
 - Or use <ui-path>VCS | Go to Pull Requests…</ui-path>.
@@ -59,7 +59,7 @@ By default it opens a **Pull Requests** tab in the IDE's *Search Everywhere* pop
 
 ![The Go to Pull Requests results: the Pull Requests tab in Search Everywhere](go-to-pr-popup.png){ width="560" border-effect="line" }
 
-> Prefer a dedicated dialog? Turn **off** **Show in the Search Everywhere window** in [Settings](Settings.md) and the action opens its own quick-pick popup instead — a search field with a status **funnel** beside it, and <shortcut>↵</shortcut> Open / <shortcut>⎋</shortcut> Close keys.
+> Prefer a dedicated dialog? Turn **off** **Show in the Search Everywhere window** in [Settings](Settings.md) and the action opens its own quick-pick popup instead - a search field with a status **funnel** beside it, and <shortcut>↵</shortcut> Open / <shortcut>⎋</shortcut> Close keys.
 > {style="tip"}
 
 ## Read a PR row
@@ -69,9 +69,9 @@ Each row packs the status at a glance:
 ![The anatomy of a pull-request row](pr-row-anatomy.png){ width="640" border-effect="line" }
 
 - **Title and `!`-number**, with a **status pill** when relevant: *Draft*, *Merged*, *Abandoned*, or *Has merge conflicts*.
-- **Reviewer vote icons** — approved, approved-with-suggestions, waiting, or rejected.
+- **Reviewer vote icons** - approved, approved-with-suggestions, waiting, or rejected.
 - **An amber discussion badge** with the thread count (and how many are still unresolved).
-- **Attention chips** — *Review requested*, *Mentions you*, or *Replied* — when a PR wants your attention. These are off by default; see [Notifications &amp; Attention](Notifications-and-Attention.md) to turn them on.
+- **Attention chips** - *Review requested*, *Mentions you*, or *Replied* - when a PR wants your attention. These are off by default; see [Notifications &amp; Attention](Notifications-and-Attention.md) to turn them on.
 
 Unread PRs can show a blue **unread marker** dot that reacts to new commits *and* new comment activity. Toggle it from the tool-window gear → **Show unread markers**.
 
@@ -97,14 +97,14 @@ Every state also shows a **⋮** (More) menu with the full action set:
 | **Restart Merge** | Re-queue a stuck merge (conflicts / failed / policy-rejected) |
 | **Change Target Branch…** | Re-point the PR at a different target branch |
 | **Cherry-Pick…** | Create a branch with this PR's commits cherry-picked onto another branch |
-| **Review Changes Since…** | Re-scope the diff to what changed since a chosen update — see [Code Review](Code-Review.md#compare) |
+| **Review Changes Since…** | Re-scope the diff to what changed since a chosen update - see [Code Review](Code-Review.md#compare) |
 | **Revert…** | *(merged PRs)* Create a branch that reverts this PR's changes |
 | **Open on Web** · **Copy Link** | Jump to / copy the dev.azure.com URL |
 | **Summarize Pull Request** · **Run AI Review** | [AI assists](AI-Features.md) |
 
 ### Complete a pull request
 
-Click **Complete** to open the **Complete Pull Request** dialog. Pick a **Merge type** — the live diagram shows the resulting history shape:
+Click **Complete** to open the **Complete Pull Request** dialog. Pick a **Merge type** - the live diagram shows the resulting history shape:
 
 ![The Complete Pull Request dialog with the merge-strategy diagram](complete-pr-dialog.png){ width="560" border-effect="line" }
 
@@ -124,13 +124,13 @@ Click **+** (Create Pull Request) in the tool-window toolbar. The form pre-fills
 
 The **description** uses the same composer as PR comments: a **Write | Preview** tab strip, with the formatting toolbar above the editor. Type `@`, `#`, or `!` for inline autocomplete of people, work items, and PRs. Press <shortcut>⌘↵</shortcut> / <shortcut>Ctrl+Enter</shortcut> to create.
 
-The metadata block below the description is four inline rows — each with a pencil to edit, and where shown an **X** to clear:
+The metadata block below the description is four inline rows - each with a pencil to edit, and where shown an **X** to clear:
 
 | Row | What you set |
 |-----|--------------|
 | **Required reviewers** | People who must review |
 | **Optional reviewers** | People invited to review |
-| **Tags** | Azure DevOps PR labels — pick existing ones, or use the **+** to create a brand-new tag |
+| **Tags** | Azure DevOps PR labels - pick existing ones, or use the **+** to create a brand-new tag |
 | **Work items** | Linked Azure Boards work items |
 
 The primary button is a split button: **Create Pull Request**, with **Create Draft Pull Request** on its dropdown.
@@ -150,4 +150,4 @@ Azure DevOps has no webhooks, so the plugin polls. The list updates on its own, 
 
 ## Switch account or repository
 
-For projects bound to multiple orgs or repos, use the tool-window gear → **Switch Account / Repository…**. The current branch's PR is also shown in the Git branch widget and the status bar — see [Git Integration](Git-Integration.md).
+For projects bound to multiple orgs or repos, use the tool-window gear → **Switch Account / Repository…**. The current branch's PR is also shown in the Git branch widget and the status bar - see [Git Integration](Git-Integration.md).

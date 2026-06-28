@@ -7,7 +7,7 @@
     <section-starting-page>
         <title>%product%</title>
         <description>
-            Browse, review, and complete Azure DevOps pull requests — with AI assists and team statistics — without ever leaving your JetBrains IDE.
+            Browse, review, and complete Azure DevOps pull requests - with AI assists and team statistics - without ever leaving your JetBrains IDE.
         </description>
 
         <spotlight>
@@ -20,7 +20,7 @@
         <primary>
             <title>Key Features</title>
             <a href="Pull-Requests.md" type="branch"
-               summary="Browse, filter, and search PRs — then complete, revert, or act on them from the tool window."/>
+               summary="Browse, filter, and search PRs - then complete, revert, or act on them from the tool window."/>
             <a href="Code-Review.md" type="check-list"
                summary="Native diff viewer with inline comments, suggestions, voting, and file-viewed tracking."/>
             <a href="Review-in-Editor.md" type="documents"
@@ -30,13 +30,13 @@
             <a href="Notifications-and-Attention.md" type="feedback"
                summary="Balloons, a tool-window badge, and row chips for PRs that need your review or @mention you."/>
             <a href="Statistics.md" type="data"
-               summary="KPIs and a dozen charts — time-to-merge, review velocity, vote distribution, and more."/>
+               summary="KPIs and a dozen charts - time-to-merge, review velocity, vote distribution, and more."/>
         </primary>
 
         <secondary>
             <title>AI &amp; Configuration</title>
             <a href="AI-Features.md" type="idea"
-               summary="PR summaries, AI review, explain-code, commit messages, and grammar polish — with your own provider."/>
+               summary="PR summaries, AI review, explain-code, commit messages, and grammar polish - with your own provider."/>
             <a href="Git-Integration.md" type="integration"
                summary="Current-branch PR matching, branch-widget actions, and HTTPS credential handoff."/>
             <a href="Privacy-and-Data.md" type="lock"
@@ -63,7 +63,7 @@
                 <a href="%marketplace_url%" type="library"
                    summary="Install the plugin, browse version history, and read user reviews.">JetBrains Marketplace</a>
                 <a href="%repo_url%" type="open-source"
-                   summary="Documentation source — file issues for typos, missing content, or broken links.">GitHub repository</a>
+                   summary="Documentation source - file issues for typos, missing content, or broken links.">GitHub repository</a>
             </cards>
         </misc>
 

@@ -1,6 +1,6 @@
 # Notifications & Attention
 
-The plugin watches for pull requests that need *you* — ones awaiting your review or where someone @mentioned you — and surfaces them three ways: **balloons**, the **tool-window badge**, and **row chips**. It uses data it already polls, so there are no extra network calls.
+The plugin watches for pull requests that need *you* - ones awaiting your review or where someone @mentioned you - and surfaces them three ways: **balloons**, the **tool-window badge**, and **row chips**. It uses data it already polls, so there are no extra network calls.
 
 ## Notification balloons
 
@@ -16,7 +16,7 @@ You can be notified about:
 - A **reviewer vote change** on a PR you authored.
 - A chance to **Create a PR** right after you push a branch.
 
-A single event opens straight to the PR — **Open pull request** for a review request or vote change, **View comment** for a mention or reply (it lands on the exact comment). Several at once coalesce into one balloon (*"N pull requests need your review"*) whose **Show pull requests** action opens the tool window. Balloons dismiss themselves once you act or after a moment — there's no button to click to clear them.
+A single event opens straight to the PR - **Open pull request** for a review request or vote change, **View comment** for a mention or reply (it lands on the exact comment). Several at once coalesce into one balloon (*"N pull requests need your review"*) whose **Show pull requests** action opens the tool window. Balloons dismiss themselves once you act or after a moment - there's no button to click to clear them.
 
 ## The tool-window badge
 
@@ -52,7 +52,7 @@ Open <ui-path>Settings | Version Control | Azure DevOps</ui-path> → **Polling 
 | **Offer Create PR after I push to an Azure DevOps remote** | On |
 | **Include my own pull requests and @mentions** | Off |
 
-> **Testing solo?** Turn on **Include my own pull requests and @mentions** to see attention signals from your own activity — handy when you're the only one in the repo.
+> **Testing solo?** Turn on **Include my own pull requests and @mentions** to see attention signals from your own activity - handy when you're the only one in the repo.
 > {style="tip"}
 
-You can also route the plugin's notification groups (popup / tool window / log-only) in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> — see [Settings](Settings.md#notifications).
+You can also route the plugin's notification groups (popup / tool window / log-only) in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> - see [Settings](Settings.md#notifications).

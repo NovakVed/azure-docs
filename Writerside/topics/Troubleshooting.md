@@ -9,14 +9,14 @@ The Pull Requests tool window is hidden when no Azure DevOps Git remote is detec
 <procedure>
     <step>Run <code>git remote -v</code> in your project root. At least one remote URL must contain <code>dev.azure.com</code> or <code>visualstudio.com</code> (or your configured self-hosted server).</step>
     <step>Verify the bundled <b>Git</b> plugin (<code>Git4Idea</code>) is enabled in <ui-path>Settings | Plugins | Installed</ui-path>.</step>
-    <step>Restart the IDE — the remote scan runs on project open.</step>
+    <step>Restart the IDE - the remote scan runs on project open.</step>
 </procedure>
 
 ## "401 Unauthorized" after signing in
 
-- The PAT may lack required scopes — see [Authentication](Authentication.md). Easiest fix: regenerate with **Full access**.
+- The PAT may lack required scopes - see [Authentication](Authentication.md). Easiest fix: regenerate with **Full access**.
 - The PAT may have expired. Tokens expire on the date you set when creating them.
-- Your organization may have disabled PATs — in that case use OAuth.
+- Your organization may have disabled PATs - in that case use OAuth.
 
 ## "403 Forbidden" on specific actions
 
@@ -24,10 +24,10 @@ The PAT is valid but your Azure DevOps account doesn't have permission for the a
 
 ## OAuth browser doesn't return to the IDE
 
-OAuth completes via a **local loopback redirect** — the browser is sent back to `http://127.0.0.1:<port>/azure-oauth/callback`, served by the IDE's built-in web server, which then shows *"Sign-in complete. You can close this tab."* If that round-trip fails:
+OAuth completes via a **local loopback redirect** - the browser is sent back to `http://127.0.0.1:<port>/azure-oauth/callback`, served by the IDE's built-in web server, which then shows *"Sign-in complete. You can close this tab."* If that round-trip fails:
 
 - A firewall or security tool may be blocking localhost connections to the IDE's built-in server (port range **63342–63352**).
-- A blocked pop-up or a non-default browser can stop the redirect — make sure your intended browser is the default.
+- A blocked pop-up or a non-default browser can stop the redirect - make sure your intended browser is the default.
 - The sign-in window has a **5-minute** limit; if it lapsed, start over.
 
 Workaround: use a Personal Access Token instead of OAuth.
@@ -35,7 +35,7 @@ Workaround: use a Personal Access Token instead of OAuth.
 ## PRs don't show new comments after sync
 
 <procedure>
-    <step>Press <shortcut>⌘R</shortcut> / <shortcut>Ctrl+R</shortcut> / <shortcut>F5</shortcut> (or right-click → <b>Refresh List</b>) to force a sync immediately — there is no Reload toolbar button.</step>
+    <step>Press <shortcut>⌘R</shortcut> / <shortcut>Ctrl+R</shortcut> / <shortcut>F5</shortcut> (or right-click → <b>Refresh List</b>) to force a sync immediately - there is no Reload toolbar button.</step>
     <step>Check the <b>idea.log</b> for sync errors (<a anchor="enabling-debug-logs">enable debug logs</a> for more detail).</step>
     <step>Sync interval is 60 s by default. If you've increased it in <a href="Settings.md">Settings</a>, expect a longer delay.</step>
 </procedure>
@@ -43,7 +43,7 @@ Workaround: use a Personal Access Token instead of OAuth.
 ## Inline comments don't appear in the diff
 
 - The plugin only renders inline threads on PRs you have **Code (Read)** permission for.
-- If you're viewing the diff from your local working tree (not the PR), inline threads won't render — open the PR from the tool window so its changes tree and threads load.
+- If you're viewing the diff from your local working tree (not the PR), inline threads won't render - open the PR from the tool window so its changes tree and threads load.
 - If your local branch has diverged from the PR head, review-in-editor disables itself. Push your changes or check out the PR head exactly.
 
 ## Git push asks for a password
@@ -64,25 +64,25 @@ git config --global credential.helper libsecret
 ## AI features are missing or return errors
 
 - Open <ui-path>Settings | Version Control | Azure DevOps | AI Settings</ui-path> and confirm **Enable AI assistance** is checked and at least one provider is configured and enabled.
-- Click **Test connection** on the provider row — if it fails, double-check API key, model name, and endpoint URL.
+- Click **Test connection** on the provider row - if it fails, double-check API key, model name, and endpoint URL.
 - For **Ollama**, confirm the daemon is running locally (`ollama serve`) and the model you specified is pulled (`ollama list`).
 - For **CLI providers** (Claude Code, Codex, Copilot CLI), make sure the binary is on `PATH` and signed in (`claude /login`, etc.).
-- Provider rate-limit or quota errors come straight from the provider — they're not retried.
+- Provider rate-limit or quota errors come straight from the provider - they're not retried.
 
 ## Plugin conflicts
 
-The plugin shares the IDE's `collaboration-tools` toolkit with the bundled **GitHub** plugin and the **GitLab** plugin. It coexists with both — independent tool windows, independent state. Two known interaction points:
+The plugin shares the IDE's `collaboration-tools` toolkit with the bundled **GitHub** plugin and the **GitLab** plugin. It coexists with both - independent tool windows, independent state. Two known interaction points:
 
 - If a project has both an Azure DevOps and a GitHub remote, both tool windows appear; right-click context menus may surface actions from each.
 - If a third-party plugin overrides the AI extension points (`intellij.vcs.azuredevops.aiSummaryExtension` etc., see [Privacy and Data](Privacy-and-Data.md)), the built-in default is bypassed for that feature. If AI features behave unexpectedly, check <ui-path>Settings | Plugins</ui-path> for other Azure DevOps or AI plugins that may be hooking the EPs.
 
 ## Network timeouts or "request failed"
 
-The plugin uses IntelliJ's HTTP proxy configuration — there's no separate proxy setting. If corporate network restrictions block outbound HTTPS:
+The plugin uses IntelliJ's HTTP proxy configuration - there's no separate proxy setting. If corporate network restrictions block outbound HTTPS:
 
 - Check <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>. The plugin honours whatever you set here.
 - The HTTP timeout for AI streaming requests is **5 minutes**. Anything longer is surfaced as a hang and reported as a notification.
-- The retry behaviour for Azure DevOps API calls is "fail fast" — transient errors aren't retried so the UI doesn't pile up duplicate calls. The 60-second background sync picks up where a failed request left off.
+- The retry behaviour for Azure DevOps API calls is "fail fast" - transient errors aren't retried so the UI doesn't pile up duplicate calls. The 60-second background sync picks up where a failed request left off.
 
 ## Plugin update broke something
 

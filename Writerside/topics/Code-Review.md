@@ -4,17 +4,17 @@ Review pull requests with IntelliJ's native diff viewer: read the changes, leave
 
 ## The detail view
 
-Opening a PR creates a closable editor tab — a **single pane**, no sub-tabs. From top to bottom: the title and `!`-number with a **View Timeline** link, the source → target branches, the status checks (CI, conflicts, required reviewers and their votes), the **changed-files tree**, and the action bar.
+Opening a PR creates a closable editor tab - a **single pane**, no sub-tabs. From top to bottom: the title and `!`-number with a **View Timeline** link, the source → target branches, the status checks (CI, conflicts, required reviewers and their votes), the **changed-files tree**, and the action bar.
 
 ![A pull request open in the single-pane detail view](pr-detail.png){ width="720" border-effect="line" }
 
-- **Changed files** live in the tree — click one to open the diff.
-- **Discussion** opens in its own tab via the **View Timeline** link — see [Discussions &amp; Comments](Discussions-and-Comments.md).
-- **Votes and actions** live in the action bar and its overflow menu — see [Pull Requests](Pull-Requests.md#open-and-act-on-a-pr).
+- **Changed files** live in the tree - click one to open the diff.
+- **Discussion** opens in its own tab via the **View Timeline** link - see [Discussions &amp; Comments](Discussions-and-Comments.md).
+- **Votes and actions** live in the action bar and its overflow menu - see [Pull Requests](Pull-Requests.md#open-and-act-on-a-pr).
 
 ## Read the diff
 
-Clicking a file opens the diff in a single tab per PR — clicking another file swaps it in place, so <shortcut>F7</shortcut> / <shortcut>⇧F7</shortcut> step through every changed range across the whole PR. The diff tab carries a **Review:** toolbar with **Refresh**, **Submit review**, and **Previous / Next Comment**.
+Clicking a file opens the diff in a single tab per PR - clicking another file swaps it in place, so <shortcut>F7</shortcut> / <shortcut>⇧F7</shortcut> step through every changed range across the whole PR. The diff tab carries a **Review:** toolbar with **Refresh**, **Submit review**, and **Previous / Next Comment**.
 
 | Navigate | macOS | Windows / Linux |
 |----------|-------|------------------|
@@ -28,21 +28,21 @@ In the diff's gutter settings, the **Review Discussions** menu controls which in
 ## Comment on a line
 
 <procedure title="Add an inline comment">
-    <step>Hover the gutter of a changed line — a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌃⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
-    <step>Type your comment. The composer uses the same GitHub-style chrome as PR discussions — a <b>Write</b> / <b>Preview</b> tab strip with the formatting toolbar on top, plus @mentions and image paste. See <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a> for the editor in full.</step>
+    <step>Hover the gutter of a changed line - a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌃⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
+    <step>Type your comment. The composer uses the same GitHub-style chrome as PR discussions - a <b>Write</b> / <b>Preview</b> tab strip with the formatting toolbar on top, plus @mentions and image paste. See <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a> for the editor in full.</step>
     <step>Post it from the split submit button. The primary action is <b>Start Review</b>, which queues the comment as part of a pending review; its dropdown holds <b>Add Single Comment</b> (post immediately) and <b>Suggest change</b> (wrap the selection as a suggested change the author can apply).</step>
 </procedure>
 
 ![An inline comment open in the diff viewer](diff-comment.png){ width="720" border-effect="line" }
 
-> **Pending review.** Comments you queue stay as drafts (counted on the **Submit (N)** button) until you submit them together with your vote — the same review flow GitHub users expect. Submit from the **Review:** toolbar or the overflow menu's **Submit Pending Comments**.
+> **Pending review.** Comments you queue stay as drafts (counted on the **Submit (N)** button) until you submit them together with your vote - the same review flow GitHub users expect. Submit from the **Review:** toolbar or the overflow menu's **Submit Pending Comments**.
 > {style="note"}
 
 ### Copy a link to code
 
-Right-click a line in the diff viewer — or in your normal editor while reviewing in it — and choose **Copy Link to Code** to copy the Azure DevOps web deep-link to that code (file, line, and column range), the same link the web UI's **Copy link** produces. With text selected, the item reads **Copy Link to Selected Code** and links the exact character span; with no selection it copies a whole-line link at the caret. The shortcut is <shortcut>⌘⇧L</shortcut> / <shortcut>Ctrl+Shift+L</shortcut>.
+Right-click a line in the diff viewer - or in your normal editor while reviewing in it - and choose **Copy Link to Code** to copy the Azure DevOps web deep-link to that code (file, line, and column range), the same link the web UI's **Copy link** produces. With text selected, the item reads **Copy Link to Selected Code** and links the exact character span; with no selection it copies a whole-line link at the caret. The shortcut is <shortcut>⌘⇧L</shortcut> / <shortcut>Ctrl+Shift+L</shortcut>.
 
-> The action only appears inside an Azure PR review surface (the diff viewer or the review-in-editor surface) — it stays hidden in ordinary editors.
+> The action only appears inside an Azure PR review surface (the diff viewer or the review-in-editor surface) - it stays hidden in ordinary editors.
 > {style="note"}
 
 ## Vote
@@ -55,7 +55,7 @@ Completing or abandoning a PR, including merge strategies, is covered in [Pull R
 
 ## Track files as viewed
 
-For large PRs, mark each file **viewed** as you go — viewed files dim in the changes tree.
+For large PRs, mark each file **viewed** as you go - viewed files dim in the changes tree.
 
 - Press <shortcut>⌘⇧S</shortcut> / <shortcut>Ctrl+Shift+S</shortcut>, or right-click → **Mark File as Viewed**.
 - Right-click with several files selected to **Mark All as Viewed**.
@@ -67,12 +67,12 @@ For large PRs, mark each file **viewed** as you go — viewed files dim in the c
 
 ## Review only what changed since an update {id="compare"}
 
-When an author pushes new commits, you don't have to re-read the whole PR. From the overflow **⋮** menu, choose **Review Changes Since…**, pick an update, and the changes tree re-scopes to just that diff — target-branch commits merged in between are filtered out.
+When an author pushes new commits, you don't have to re-read the whole PR. From the overflow **⋮** menu, choose **Review Changes Since…**, pick an update, and the changes tree re-scopes to just that diff - target-branch commits merged in between are filtered out.
 
 ![The iteration-scope banner above the changes tree](compare-updates-banner.png){ width="700" border-effect="line" }
 
-A banner — *"Reviewing only what changed since update N"* — sits above the tree; click **Show all changes** to return to the full PR. (The action appears once a PR has at least two updates.)
+A banner - *"Reviewing only what changed since update N"* - sits above the tree; click **Show all changes** to return to the full PR. (The action appears once a PR has at least two updates.)
 
 ## Review in the editor instead
 
-When the PR's source branch is checked out, you can comment on changed lines right in your normal editor — no diff tab needed. See [Review in Editor](Review-in-Editor.md).
+When the PR's source branch is checked out, you can comment on changed lines right in your normal editor - no diff tab needed. See [Review in Editor](Review-in-Editor.md).

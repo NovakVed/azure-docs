@@ -3,7 +3,7 @@
 This is the shot list for the documentation site. Every image referenced from a
 topic already has a **labelled placeholder PNG** in [`images/`](images/) so the
 site builds green. To add a real screenshot, **capture it and overwrite the
-placeholder with the same filename** — no topic edits needed, the image just
+placeholder with the same filename** - no topic edits needed, the image just
 appears.
 
 ## How to capture (keep them consistent)
@@ -12,7 +12,7 @@ appears.
 - **Crop tight:** capture just the relevant panel/dialog, not the whole screen.
   On macOS use <kbd>⌘⇧4</kbd> then <kbd>Space</kbd> to grab a single window, or
   drag to select a region.
-- **Scale:** capture on a HiDPI/Retina display if you can — the images render up
+- **Scale:** capture on a HiDPI/Retina display if you can - the images render up
   to the widths below, so 2× pixels stay crisp.
 - **Data hygiene:** use a demo org/repo or scrub anything sensitive. Avoid real
   tokens, private repo names, or personal email addresses in frame.
@@ -20,18 +20,18 @@ appears.
 
 After dropping files in, run a build (push to `main`, or preview with the
 Writerside plugin) to see them live. Delete this file before publishing if you
-prefer it not to ship — it lives outside `topics/` so it is **not** part of the
+prefer it not to ship - it lives outside `topics/` so it is **not** part of the
 built site either way.
 
 ## Must-have first (8)
 
-These carry the most weight — the hero, the two most-misunderstood screens
+These carry the most weight - the hero, the two most-misunderstood screens
 (single-pane detail, real sign-in), and the headline features.
 
 | File | Used on | Capture |
 |------|---------|---------|
 | `pr-tool-window.png` | Welcome (hero), Pull Requests, Quick Start | The **Pull Requests** tool window with a populated list: the search field, the full filter-chip row (State, Author, Tags, Assignee, Review, Work Items, Draft, Sort) and the Quick Filters icon on the left, and several PR rows showing status pills, reviewer vote icons, and the amber comment badge. Turn on **Show attention markers** first so a chip is visible. |
-| `pr-detail.png` | Quick Start, Pull Requests, Code Review | An open PR in the **single-pane detail view**: title with `!N`, the **View Timeline** link, base→head branches, the status-checks panel with per-reviewer votes, the changes tree, and the action bar with the **Approve** split-button. (No sub-tabs — that's the point.) |
+| `pr-detail.png` | Quick Start, Pull Requests, Code Review | An open PR in the **single-pane detail view**: title with `!N`, the **View Timeline** link, base→head branches, the status-checks panel with per-reviewer votes, the changes tree, and the action bar with the **Approve** split-button. (No sub-tabs - that's the point.) |
 | `pat-login-dialog.png` | Authentication, Quick Start | The **Log In to Azure DevOps** dialog: the single **Server** field (e.g. `https://dev.azure.com/my-org`), the **Token** field, the required-scopes hint line, the **Generate…** button, and the "Learn how to generate…" link. |
 | `oauth-scope-dialog.png` | Authentication, Quick Start | The **Sign in with Microsoft** permission picker with both radio options: **Full access (Recommended)** selected and **Standard access** below, and the **Continue** button. |
 | `review-in-editor.png` | Review in Editor, Code Review, Git Integration | A source file checked out on a PR branch: the blue gutter line on a changed range, the **Review:** toolbar (Prev/Next Comment) above the editor, an expanded inline thread inlay, and the main-toolbar branch widget showing `!N on <branch>`. |
@@ -60,5 +60,5 @@ These carry the most weight — the hero, the two most-misunderstood screens
 | `attention-balloon.png` | Notifications & Attention | A lower-right notification balloon for a PR that needs you, with **Open pull request** / **Mark as read**. |
 | `branch-widget-popup.png` | Git Integration, Review in Editor | The main-toolbar Git branch widget popup with the Azure DevOps section: Show in Tool Window, Update Pull Request Branch, Review in Editor. |
 | `marketplace-install.png` | Installation | Settings ▸ Plugins ▸ Marketplace with "Azure DevOps Pull Requests" searched and the **Install** button visible. |
-| `go-to-pr-popup.png` | Pull Requests | **Go to Pull Requests…** (⌘⇧P): the **Pull Requests** tab in *Search Everywhere* with a few results — or, with **Show in the Search Everywhere window** turned off, the standalone quick-pick popup (search field, status funnel, ↵ Open / ⎋ Close footer). |
+| `go-to-pr-popup.png` | Pull Requests | **Go to Pull Requests…** (⌘⇧P): the **Pull Requests** tab in *Search Everywhere* with a few results - or, with **Show in the Search Everywhere window** turned off, the standalone quick-pick popup (search field, status funnel, ↵ Open / ⎋ Close footer). |
 | `ai-summary-settings-popup.png` | AI Features | The **Summary settings** popup off the AI summary card's gear: the *Generate automatically on open* checkbox, the **Verbosity** and **Formality tone** sliders, and the **Personality** / **Customization prompt** fields. |

@@ -1,4 +1,4 @@
-# Azure DevOps Pull Requests — Documentation
+# Azure DevOps Pull Requests - Documentation
 
 This folder contains the user-facing documentation, authored with [Writerside](https://www.jetbrains.com/writerside/). On every push to `main`, GitHub Actions builds the site and publishes it to GitHub Pages.
 
@@ -10,7 +10,7 @@ docs/Writerside/
 ├── azd.tree                Table of contents (instance: "azd")
 ├── v.list                  Variables (product name, repo URL, etc.)
 ├── c.list                  Categories
-├── topics/                 Markdown content — one .md per page
+├── topics/                 Markdown content - one .md per page
 ├── images/                 Logo + screenshots referenced from topics
 └── cfg/buildprofiles.xml   Theme color, GitHub edit link, search settings
 ```
@@ -19,12 +19,12 @@ docs/Writerside/
 
 1. Install the [Writerside plugin](https://plugins.jetbrains.com/plugin/20158-writerside) in IntelliJ IDEA (or open the project in [Writerside](https://www.jetbrains.com/writerside/) standalone).
 2. Open this repo and double-click `docs/Writerside/writerside.cfg`.
-3. Edit any `.md` file under `topics/` — the preview panel updates live.
+3. Edit any `.md` file under `topics/` - the preview panel updates live.
 4. The plugin checks broken links, missing topics, and snippet references as you type.
 
 ## Author with any text editor
 
-The topics are plain Markdown — you can edit them in any editor. Writerside-specific extensions used:
+The topics are plain Markdown - you can edit them in any editor. Writerside-specific extensions used:
 
 | Extension | Syntax |
 |---|---|
@@ -76,7 +76,7 @@ Live site: https://vednovak.github.io/azure/ (after first deploy).
 
 ## Editing tips
 
-- The first `#` heading in a Markdown file becomes the page title — don't add a separate `title:` frontmatter.
-- File names with spaces aren't supported by Writerside — use kebab-case or PascalCase: `Quick-Start.md`, `Authentication.md`.
+- The first `#` heading in a Markdown file becomes the page title - don't add a separate `title:` frontmatter.
+- File names with spaces aren't supported by Writerside - use kebab-case or PascalCase: `Quick-Start.md`, `Authentication.md`.
 - Cross-page anchors: `[Link](Other-Page.md#section-id)` where the section id is auto-slugified from the heading text (override with `{id="custom"}`).
 - Variables in `v.list` are referenced as `%var-name%` and resolved at build time.

@@ -2,10 +2,10 @@
 
 Every shortcut the plugin uses, in one place. There are two kinds:
 
-- **IDE actions** — registered with the IDE, shown in their menus, and **rebindable** in <ui-path>Settings | Keymap</ui-path> (search `AzureDevOps`). Each has an **Action ID**.
-- **Composer keys** — built into the comment / description editor and active only while it's focused. They aren't in Keymap and can't be rebound.
+- **IDE actions** - registered with the IDE, shown in their menus, and **rebindable** in <ui-path>Settings | Keymap</ui-path> (search `AzureDevOps`). Each has an **Action ID**.
+- **Composer keys** - built into the comment / description editor and active only while it's focused. They aren't in Keymap and can't be rebound.
 
-> On macOS, <shortcut>⌘</shortcut> is Command and <shortcut>⌃</shortcut> is **Control** — most actions use ⌘, but a few use ⌃. Windows / Linux use <shortcut>Ctrl</shortcut>.
+> On macOS, <shortcut>⌘</shortcut> is Command and <shortcut>⌃</shortcut> is **Control** - most actions use ⌘, but a few use ⌃. Windows / Linux use <shortcut>Ctrl</shortcut>.
 > {style="note"}
 
 ## In the editor (review-in-editor)
@@ -59,7 +59,7 @@ These work while a comment, reply, or PR-description editor is focused. They're 
 | **Copy Pull Request URL** | *no default* | `AzureDevOps.PullRequest.Copy.Link` |
 | **Show in Tool Window** | *no default* | `AzureDevOps.Pull.Request.Show.In.Toolwindow` |
 
-> The Pull Requests tool window has no Reload button — refresh is keyboard-only (or right-click → **Refresh List**).
+> The Pull Requests tool window has no Reload button - refresh is keyboard-only (or right-click → **Refresh List**).
 > {style="note"}
 
 ## Branch widget / VCS menu
@@ -71,7 +71,7 @@ These work while a comment, reply, or PR-description editor is focused. They're 
 | **Review in Editor** | *no default* | `AzureDevOps.Pull.Request.Review.In.Editor.Toggle` |
 | **Go to Pull Requests…** | <shortcut>⌘⇧P</shortcut> / <shortcut>Ctrl+Shift+P</shortcut> | `AzureDevOps.PullRequest.GoTo` |
 
-> Double **Shift** (<shortcut>⇧⇧</shortcut>) opens the IDE's *Search Everywhere*, where Azure DevOps PRs appear in their own **Pull Requests** tab — the same tab **Go to Pull Requests…** opens by default. See [Pull Requests](Pull-Requests.md#jump-to-a-specific-pr).
+> Double **Shift** (<shortcut>⇧⇧</shortcut>) opens the IDE's *Search Everywhere*, where Azure DevOps PRs appear in their own **Pull Requests** tab - the same tab **Go to Pull Requests…** opens by default. See [Pull Requests](Pull-Requests.md#jump-to-a-specific-pr).
 > {style="tip"}
 
 ## AI actions
@@ -83,11 +83,11 @@ These work while a comment, reply, or PR-description editor is focused. They're 
 | **Explain This File** | *no default* | `AzureDevOps.PullRequest.AI.Explain` |
 | **Generate Commit Message with AI** | *no default* | `AzureDevOps.AI.GenerateCommitMessage` |
 
-These need an AI provider configured — see [AI Features](AI-Features.md).
+These need an AI provider configured - see [AI Features](AI-Features.md).
 
 ## How to rebind {id="rebind"}
 
-Only the **IDE actions** above (the ones with an Action ID) can be rebound — the composer keys are fixed.
+Only the **IDE actions** above (the ones with an Action ID) can be rebound - the composer keys are fixed.
 
 <procedure title="Bind a shortcut">
     <step>Open <ui-path>Settings | Keymap</ui-path>.</step>
@@ -97,5 +97,5 @@ Only the **IDE actions** above (the ones with an Action ID) can be rebound — t
     <step>Click <b>OK</b>.</step>
 </procedure>
 
-> Use the **action ID** column when filing a bug — it identifies the exact action across IDE versions where display names sometimes differ.
+> Use the **action ID** column when filing a bug - it identifies the exact action across IDE versions where display names sometimes differ.
 > {style="tip"}

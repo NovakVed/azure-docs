@@ -14,20 +14,20 @@ No. The plugin is for Git-backed Azure Repos only. **TFVC** (Team Foundation Ver
 
 ## Can I use this without an Azure DevOps account?
 
-No — the plugin is exclusively for Azure DevOps. For GitHub or GitLab, use the bundled GitHub plugin or the JetBrains GitLab plugin respectively.
+No - the plugin is exclusively for Azure DevOps. For GitHub or GitLab, use the bundled GitHub plugin or the JetBrains GitLab plugin respectively.
 
 ## Can I have both the GitHub and Azure DevOps PR plugins in the same IDE?
 
 Yes. They register independent tool windows and don't share state. If a single project has remotes pointing at both GitHub and Azure DevOps, both tool windows appear; each one only lists PRs for its own remote.
 
-## OAuth or PAT — which should I pick?
+## OAuth or PAT - which should I pick?
 
 | You should use… | When                                                                                                         |
 |-----------------|--------------------------------------------------------------------------------------------------------------|
 | **OAuth**       | You're on the cloud product (`dev.azure.com`), your org doesn't ban OAuth, and you want MFA prompts inline.  |
 | **PAT**         | You're on Azure DevOps Server (on-prem), your org's policy mandates PATs, or you've hit OAuth handler issues.|
 
-OAuth tokens refresh automatically; PATs expire on the date you set when creating them. PATs bypass MFA by design — generating one requires the user to already be authenticated, but the token itself doesn't re-prompt.
+OAuth tokens refresh automatically; PATs expire on the date you set when creating them. PATs bypass MFA by design - generating one requires the user to already be authenticated, but the token itself doesn't re-prompt.
 
 ## Is my code sent anywhere other than Azure DevOps?
 
@@ -43,13 +43,13 @@ You can also leave AI on and route every feature to a local **Ollama** instance 
 
 ## Where do I see PR metrics?
 
-The [Statistics](Statistics.md) tab shows KPIs and charts — time-to-merge, review velocity, vote distribution, and more — computed locally from cached data. It's a view-only dashboard; for exportable, org-wide reporting use Azure DevOps Analytics.
+The [Statistics](Statistics.md) tab shows KPIs and charts - time-to-merge, review velocity, vote distribution, and more - computed locally from cached data. It's a view-only dashboard; for exportable, org-wide reporting use Azure DevOps Analytics.
 
 ## What's the memory and CPU footprint?
 
-The plugin is a thin Swing UI over the IDE's bundled `collaboration-tools` toolkit (same toolkit used by the GitHub plugin). On idle it adds ~30-60 MB of heap on top of the IDE's baseline. Active syncing — fetching PR lists, comments, and diffs — adds a few MB more.
+The plugin is a thin Swing UI over the IDE's bundled `collaboration-tools` toolkit (same toolkit used by the GitHub plugin). On idle it adds ~30-60 MB of heap on top of the IDE's baseline. Active syncing - fetching PR lists, comments, and diffs - adds a few MB more.
 
-For huge orgs (1000+ PRs across many repos), the PR list virtualizes — only visible rows hold UI components.
+For huge orgs (1000+ PRs across many repos), the PR list virtualizes - only visible rows hold UI components.
 
 ## Does the plugin upload anything anonymously? Telemetry?
 

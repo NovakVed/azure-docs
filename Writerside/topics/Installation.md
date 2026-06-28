@@ -2,7 +2,7 @@
 
 Install %product% in any JetBrains IDE running build %min_ide_build% or newer.
 
-> **TL;DR** — In <ui-path>Settings | Plugins | Marketplace</ui-path>, search **Azure DevOps Pull Requests**, click **Install**, and restart. Then open a project with an Azure DevOps remote and [sign in](Authentication.md).
+> **TL;DR** - In <ui-path>Settings | Plugins | Marketplace</ui-path>, search **Azure DevOps Pull Requests**, click **Install**, and restart. Then open a project with an Azure DevOps remote and [sign in](Authentication.md).
 > {style="tip"}
 
 ## Supported IDEs
@@ -17,7 +17,7 @@ The plugin targets the IntelliJ Platform and runs on any IDE built on it:
 
 ### Minimum build
 
-The plugin requires IDE build `%min_ide_build%.*` or later — the **%min_ide_version%** release of every JetBrains IDE — because it uses platform APIs introduced then.
+The plugin requires IDE build `%min_ide_build%.*` or later - the **%min_ide_version%** release of every JetBrains IDE - because it uses platform APIs introduced then.
 
 > **Check your version:** open **About** from the IDE menu and look for a build number starting with `%min_ide_build%`. If it's lower, run **Help → Check for Updates** first.
 > {style="note"}
@@ -68,14 +68,14 @@ For a pre-release `.zip` build:
 
 ## Required bundled plugins
 
-The plugin **depends on** two IDE-bundled plugins (enabled by default everywhere). If either is disabled, the plugin won't load — re-enable them in <ui-path>Settings | Plugins | Installed</ui-path>:
+The plugin **depends on** two IDE-bundled plugins (enabled by default everywhere). If either is disabled, the plugin won't load - re-enable them in <ui-path>Settings | Plugins | Installed</ui-path>:
 
-- **Git** (`Git4Idea`) — branch detection and HTTPS credentials.
-- **Markdown** — powers the comment and description editors.
+- **Git** (`Git4Idea`) - branch detection and HTTPS credentials.
+- **Markdown** - powers the comment and description editors.
 
 ## Update and uninstall
 
-Updates appear automatically (no IDE restart — the plugin loads dynamically). To update manually, open <ui-path>Settings | Plugins | Installed</ui-path>, find the plugin, and click **Update** if shown. To uninstall, use the gear icon → **Uninstall**; your stored credentials are removed from the keychain too.
+Updates appear automatically (no IDE restart - the plugin loads dynamically). To update manually, open <ui-path>Settings | Plugins | Installed</ui-path>, find the plugin, and click **Update** if shown. To uninstall, use the gear icon → **Uninstall**; your stored credentials are removed from the keychain too.
 
 > **Next up:** [Quick Start](Quick-Start.md) for a one-minute tour, or [Authentication](Authentication.md) to sign in. To enable summaries and AI review, see [AI Features](AI-Features.md).
 > {style="tip"}

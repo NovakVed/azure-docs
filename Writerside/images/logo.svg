@@ -1,11 +1,11 @@
-<!-- Docs site header logo: the plugin's brand mark — an original pull-request
+<!-- Docs site header logo: the plugin's brand mark - an original pull-request
      glyph in the Azure color palette, matching the JetBrains Marketplace icon.
      A generic PR symbol (not a Microsoft brand mark), so it's safe to use as
      the site's own identity. -->
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <linearGradient id="az" x1="6" y1="6" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-<stop stop-color="#163697"/>
+<stop offset="0" stop-color="#163697"/>
 <stop offset="0.35" stop-color="#2764E7"/>
 <stop offset="0.7" stop-color="#0FAFFF"/>
 <stop offset="1" stop-color="#6BE7A0"/>
