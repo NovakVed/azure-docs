@@ -28,7 +28,7 @@ In the diff's gutter settings, the **Review Discussions** menu controls which in
 ## Comment on a line
 
 <procedure title="Add an inline comment">
-    <step>Hover the gutter of a changed line — a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌘⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
+    <step>Hover the gutter of a changed line — a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌃⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
     <step>Type your comment. The composer uses the same GitHub-style chrome as PR discussions — a <b>Write</b> / <b>Preview</b> tab strip with the formatting toolbar on top, plus @mentions and image paste. See <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a> for the editor in full.</step>
     <step>Post it from the split submit button. The primary action is <b>Start Review</b>, which queues the comment as part of a pending review; its dropdown holds <b>Add Single Comment</b> (post immediately) and <b>Suggest change</b> (wrap the selection as a suggested change the author can apply).</step>
 </procedure>

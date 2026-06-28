@@ -27,7 +27,7 @@ Threads anchor to the **PR's** line numbers. If you edit the file locally, the p
 ## Comment and review
 
 <procedure title="Add a comment from the editor">
-    <step>Click the <b>+</b> in the gutter (or press <shortcut>⌘⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret).</step>
+    <step>Click the <b>+</b> in the gutter (or press <shortcut>⌃⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret).</step>
     <step>Type your comment — full markdown, with the same toolbar, @mentions, suggestions, and image paste as everywhere else.</step>
     <step>Post it immediately, queue it as part of a pending review, or wrap it as a suggested change.</step>
 </procedure>
