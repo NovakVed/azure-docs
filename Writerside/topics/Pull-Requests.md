@@ -47,6 +47,21 @@ Filters persist **per project** across IDE restarts. To clear them, use the Quic
 > **Search** — type in the field above the chips to match PR titles and descriptions. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear — selecting one opens it directly.
 > {style="tip"}
 
+### Jump to a specific PR
+
+When you already know which PR you want, skip the list. **Go to Pull Requests…** fuzzy-searches every cached PR — by **id, title, author, or repo** — and opens it straight on its timeline. An empty search lists every cached PR (unread first, then newest).
+
+- Press <shortcut>⌘⇧P</shortcut> / <shortcut>Ctrl+Shift+P</shortcut>.
+- Or use <ui-path>VCS | Go to Pull Requests…</ui-path>.
+- Or run *Find Action* (<shortcut>⌘⇧A</shortcut> / <shortcut>Ctrl+Shift+A</shortcut>) and type **Go to Pull Requests**.
+
+By default it opens a **Pull Requests** tab in the IDE's *Search Everywhere* popup, next to Files, Symbols, and Actions; press <shortcut>↵ Enter</shortcut> to open the highlighted PR.
+
+![The Go to Pull Requests results: the Pull Requests tab in Search Everywhere](go-to-pr-popup.png){ width="560" border-effect="line" }
+
+> Prefer a dedicated dialog? Turn **off** **Show in the Search Everywhere window** in [Settings](Settings.md) and the action opens its own quick-pick popup instead — a search field with a status **funnel** beside it, and <shortcut>↵</shortcut> Open / <shortcut>⎋</shortcut> Close keys.
+> {style="tip"}
+
 ## Read a PR row
 
 Each row packs the status at a glance:
@@ -103,11 +118,24 @@ Right-click any row for quick actions too: **View Pull Request**, **View Pull Re
 
 ## Create a pull request
 
-Click **+** (Create Pull Request) in the tool-window toolbar. The form pre-fills the source branch (your current branch) and the default target branch. Add a title, description, reviewers, and work items — then create it (optionally as a **Draft**).
+Click **+** (Create Pull Request) in the tool-window toolbar. The form pre-fills the source branch (your current branch) and the default target branch.
 
-![Creating a pull request with AI-generated title and description](create-pr-ai.png){ width="640" border-effect="line" }
+![The Create Pull Request form: the Write/Preview description composer and the reviewers, tags, and work-item rows](create-pr-ai.png){ width="640" border-effect="line" }
 
-> With an [AI provider configured](AI-Features.md), the title and description fields gain a **Generate** action that drafts both from your branch's diff.
+The **description** uses the same composer as PR comments: a **Write | Preview** tab strip, with the formatting toolbar above the editor. Type `@`, `#`, or `!` for inline autocomplete of people, work items, and PRs. Press <shortcut>⌘↵</shortcut> / <shortcut>Ctrl+Enter</shortcut> to create.
+
+The metadata block below the description is four inline rows — each with a pencil to edit, and where shown an **X** to clear:
+
+| Row | What you set |
+|-----|--------------|
+| **Required reviewers** | People who must review |
+| **Optional reviewers** | People invited to review |
+| **Tags** | Azure DevOps PR labels — pick existing ones, or use the **+** to create a brand-new tag |
+| **Work items** | Linked Azure Boards work items |
+
+The primary button is a split button: **Create Pull Request**, with **Create Draft Pull Request** on its dropdown.
+
+> With [AI enabled](AI-Features.md), the description composer toolbar gains an AI button (tooltip **Generate title &amp; description with AI**) that drafts the title and description from your branch's commits. If no AI provider is set up yet, clicking it offers to open AI Settings.
 > {style="tip"}
 
 ## Refresh and background sync

@@ -29,13 +29,20 @@ In the diff's gutter settings, the **Review Discussions** menu controls which in
 
 <procedure title="Add an inline comment">
     <step>Hover the gutter of a changed line — a <b>+</b> appears. Click it (or drag across line numbers to span a range). You can also press <shortcut>⌘⇧M</shortcut> / <shortcut>Ctrl+Shift+M</shortcut> at the caret.</step>
-    <step>Type your comment. The editor is full markdown with a formatting toolbar, @mentions, and image paste — see <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a>.</step>
-    <step>Post it one of three ways: <b>immediately</b> as a comment, <b>queued</b> as part of a pending review to submit together, or wrapped as a <b>suggested change</b> the author can apply in one click.</step>
+    <step>Type your comment. The composer uses the same GitHub-style chrome as PR discussions — a <b>Write</b> / <b>Preview</b> tab strip with the formatting toolbar on top, plus @mentions and image paste. See <a href="Discussions-and-Comments.md">Discussions &amp; Comments</a> for the editor in full.</step>
+    <step>Post it from the split submit button. The primary action is <b>Start Review</b>, which queues the comment as part of a pending review; its dropdown holds <b>Add Single Comment</b> (post immediately) and <b>Suggest change</b> (wrap the selection as a suggested change the author can apply).</step>
 </procedure>
 
 ![An inline comment open in the diff viewer](diff-comment.png){ width="720" border-effect="line" }
 
 > **Pending review.** Comments you queue stay as drafts (counted on the **Submit (N)** button) until you submit them together with your vote — the same review flow GitHub users expect. Submit from the **Review:** toolbar or the overflow menu's **Submit Pending Comments**.
+> {style="note"}
+
+### Copy a link to code
+
+Right-click a line in the diff viewer — or in your normal editor while reviewing in it — and choose **Copy Link to Code** to copy the Azure DevOps web deep-link to that code (file, line, and column range), the same link the web UI's **Copy link** produces. With text selected, the item reads **Copy Link to Selected Code** and links the exact character span; with no selection it copies a whole-line link at the caret. The shortcut is <shortcut>⌘⇧L</shortcut> / <shortcut>Ctrl+Shift+L</shortcut>.
+
+> The action only appears inside an Azure PR review surface (the diff viewer or the review-in-editor surface) — it stays hidden in ordinary editors.
 > {style="note"}
 
 ## Vote

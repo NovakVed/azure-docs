@@ -30,9 +30,9 @@ A row of headline numbers across the top:
 
 The charts are grouped into three sections:
 
-- **Workload** — *Top creators*, *Top reviewers*, *Top commenters*, *Open PR aging*.
-- **Process health** — *Vote distribution*, *PR status*, *Time to merge*, *PR cycle time (days)*, *Review velocity*.
-- **Where work goes** — *Target branches*, *Daily activity*, *Day-of-week activity*, *PRs merged per week*, *Reviewer × Author* collaboration.
+- **Workload** — *Top creators*, *Top reviewers*, *Top commenters*, *Reviewer × Author* collaboration.
+- **Process health** — *Vote distribution*, *Time to merge*, *PR status*, *Open PR aging*, *PR cycle time (days)*, *PRs merged per week*.
+- **Where work goes** — *Target branches*, *Day-of-week activity*, *Daily activity*.
 
 ## Filter and scope
 

@@ -7,6 +7,7 @@ Every action the plugin contributes, grouped by surface. To rebind any of them, 
 | Action | macOS | Windows / Linux | Action ID |
 |--------|-------|------------------|-----------|
 | **Add Review Comment** | <shortcut>⌘⇧M</shortcut> | <shortcut>Ctrl+Shift+M</shortcut> | `AzureDevOps.PullRequest.AddCommentAtCursor` |
+| **Copy Link to Code** | <shortcut>⌘⇧L</shortcut> | <shortcut>Ctrl+Shift+L</shortcut> | `AzureDevOps.PullRequest.CopyCodeLink` |
 
 Only fires when the caret is on a changed line of a file in an open PR. See [Review in Editor](Review-in-Editor.md).
 
@@ -16,6 +17,7 @@ Only fires when the caret is on a changed line of a file in an open PR. See [Rev
 |--------|-------|------------------|-----------|
 | **Mark File as Viewed** | <shortcut>⌘⇧S</shortcut> | <shortcut>Ctrl+Shift+S</shortcut> | `AzureDevOps.PullRequest.MarkFileAsViewed` |
 | **Add Review Comment** | <shortcut>⌘⇧M</shortcut> | <shortcut>Ctrl+Shift+M</shortcut> | `AzureDevOps.PullRequest.AddCommentAtCursor` |
+| **Copy Link to Code** | <shortcut>⌘⇧L</shortcut> | <shortcut>Ctrl+Shift+L</shortcut> | `AzureDevOps.PullRequest.CopyCodeLink` |
 | Next / previous changed range | <shortcut>F7</shortcut> / <shortcut>⇧F7</shortcut> | <shortcut>F7</shortcut> / <shortcut>Shift+F7</shortcut> | *built-in IntelliJ diff* |
 
 ## In the PR list, timeline, and detail view
@@ -40,6 +42,7 @@ Only fires when the caret is on a changed line of a file in an open PR. See [Rev
 | **Open Current Branch PR** | *no default* | `AzureDevOps.OpenCurrentBranchPr` |
 | **Update Pull Request Branch** | *no default* | `AzureDevOps.Pull.Request.Branch.Update` |
 | **Review in Editor** | *no default* | `AzureDevOps.Pull.Request.Review.In.Editor.Toggle` |
+| **Go to Pull Requests…** | <shortcut>⌘⇧P</shortcut> / <shortcut>Ctrl+Shift+P</shortcut> | `AzureDevOps.PullRequest.GoTo` |
 
 ## AI actions
 

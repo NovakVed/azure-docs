@@ -50,13 +50,15 @@ These carry the most weight — the hero, the two most-misunderstood screens
 | `compare-updates-banner.png` | Code Review | The iteration-scope banner above the changes tree: "Reviewing only what changed since update N" with the **Show all changes** link. |
 | `add-account-menu.png` | Authentication | Settings ▸ Version Control ▸ Azure DevOps with the **+** popup open showing **Log In with Token…** and **Log In via Microsoft…**. |
 | `accounts-panel.png` | Authentication, Settings | The Azure DevOps accounts panel: a signed-in row with avatar, display name, organization URL, and the per-row pencil (edit) and ✕ (remove) icons. |
-| `diff-comment.png` | Code Review | The diff viewer with the **+** gutter affordance and a new-comment inlay open (formatting toolbar + submit options). |
+| `diff-comment.png` | Code Review | The diff viewer with the **+** gutter affordance and a new-comment inlay open: the **Write / Preview** tabs + top toolbar, and the **Start Review** split submit button (dropdown: Add Single Comment, Suggest change). |
 | `mark-file-viewed.png` | Code Review | The changes-tree right-click menu showing **Mark File as Viewed**, next to the tree with some files dimmed as viewed. |
-| `comment-toolbar.png` | Discussions & Comments | A comment editor with the full formatting toolbar, including the **Polish grammar & spelling with AI** button and the suggestion button, with the @mention autocomplete open if possible. |
+| `comment-toolbar.png` | Discussions & Comments | A comment composer showing the **Write / Preview** tab strip at top-left, the formatting toolbar along the same top strip (with **Polish grammar & spelling with AI** pinned far-right), and the muted **Add files** link on the bottom row beside the submit buttons. |
 | `suggestion-block.png` | Discussions & Comments | A **Suggested change** card on a thread with the **Apply Locally** / **Commit…** buttons. |
 | `ai-settings.png` | AI Features, Settings | The **AI Settings** page: the **Enable AI assistance** toggle, the **AI Providers** table, and the **Per-Feature Provider** rows. |
-| `create-pr-ai.png` | Pull Requests, AI Features | The Create-PR form with source/target pre-filled and the AI **Generate** affordance on the title/description. |
+| `create-pr-ai.png` | Pull Requests, AI Features | The Create-PR form: source/target pre-filled, the **Write / Preview** description composer with the AI bulb button in its toolbar, and the Required/Optional reviewers, Tags, and Work items metadata rows. |
 | `attention-row-chips.png` | Notifications & Attention | PR rows showing the coloured attention chips: **Review requested**, **Mentions you**, **Replied**. |
 | `attention-balloon.png` | Notifications & Attention | A lower-right notification balloon for a PR that needs you, with **Open pull request** / **Mark as read**. |
 | `branch-widget-popup.png` | Git Integration, Review in Editor | The main-toolbar Git branch widget popup with the Azure DevOps section: Show in Tool Window, Update Pull Request Branch, Review in Editor. |
 | `marketplace-install.png` | Installation | Settings ▸ Plugins ▸ Marketplace with "Azure DevOps Pull Requests" searched and the **Install** button visible. |
+| `go-to-pr-popup.png` | Pull Requests | **Go to Pull Requests…** (⌘⇧P): the **Pull Requests** tab in *Search Everywhere* with a few results — or, with **Show in the Search Everywhere window** turned off, the standalone quick-pick popup (search field, status funnel, ↵ Open / ⎋ Close footer). |
+| `ai-summary-settings-popup.png` | AI Features | The **Summary settings** popup off the AI summary card's gear: the *Generate automatically on open* checkbox, the **Verbosity** and **Formality tone** sliders, and the **Personality** / **Customization prompt** fields. |

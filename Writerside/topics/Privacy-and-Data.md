@@ -28,6 +28,9 @@ Calls are made when:
 
 Only when AI is **enabled** and a provider is configured. The plugin makes outbound calls only for the action you triggered.
 
+> When you add or edit an AI provider, the plugin makes one authenticated **model-list** request (e.g. `GET /v1/models`) to that provider using its API key, to populate the model dropdowns. This is the only AI request that fires at setup time rather than on an action you triggered. No PR code, diff, or prompt is sent — just the models-list call — and the result is cached for about 30 minutes. Local providers (Ollama at a localhost address) keep this on your machine.
+> {style="note"}
+
 ### Per-feature data flow
 
 | Feature                | What the provider sees                                                                                          |

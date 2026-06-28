@@ -18,8 +18,24 @@ Optional AI helpers: PR summaries, full-diff reviews, code explanations, commit 
 
 ![The AI summary card on a PR timeline](ai-summary-card.png){ width="700" border-effect="line" }
 
-> **Run AI Review** proposes suggestions for you to accept, edit, or dismiss — **nothing is posted to Azure DevOps until you act**. A failed run surfaces a balloon with a one-click **Open AI Settings** jump.
+> **Run AI Review** proposes inline suggestions in the diff. Each one offers **Add to review** — which drops the AI's text into a new-comment editor on that line so you can edit it and queue it as a draft — or **Discard**, which hides it. **Nothing is posted to Azure DevOps until you submit your pending comments.** A failed run surfaces a balloon with a one-click **Open AI Settings** jump.
 > {style="tip"}
+
+### Tune the summary
+
+The **Summary settings** gear in the top-right corner of the **AI summary** card opens a popup that controls how the summary is generated:
+
+| Control | Options |
+|---------|---------|
+| **Generate automatically on open** | Checkbox — off by default. When on, the card drafts a summary as soon as the PR opens. |
+| **Verbosity** | Slider: **Brief** · **Neutral** · **Verbose**. |
+| **Formality tone** | Slider: **Informal** · **Neutral** · **Formal**. |
+| **Personality** | Free-text — an optional persona, e.g. "a slightly sarcastic principal engineer". |
+| **Customization prompt** | Free-text — leave blank to use the default. It's the same override as **Configure Prompts → Pull Request summary** in AI Settings, so edits in either surface stay in sync. |
+
+There's no Save button — edit the controls and dismiss the popup to apply.
+
+![The Summary settings popup off the AI summary card's gear](ai-summary-settings-popup.png){ width="520" border-effect="line" }
 
 ## Configure providers
 
@@ -36,6 +52,9 @@ Each row is one provider instance with a **Provider**, **Model**, and **Enabled*
 | **Gemini** | Google Gemini models. |
 | **Ollama** | Local models — free, no key. |
 | **GitHub Copilot** | Uses your Copilot subscription (CLI only). |
+
+> The **Model** dropdown in the Add/Edit dialog populates itself: it shows a bundled suggested list instantly, then refreshes from a live query to the provider (for example OpenAI and Claude's `/v1/models`) so newly-shipped models appear without a plugin update. The live list is cached for about 30 minutes; it refreshes on every dialog open and whenever you change the family or mode, so there's no manual refresh button. Discovery needs a saved key — until one is entered the dropdown falls back to the suggested list. The field stays editable, so you can always type a model id by hand.
+> {style="note"}
 
 Most families run in one of two **modes**:
 

@@ -12,9 +12,9 @@ The same threads show up in three places:
 
 ## The comment editor
 
-Every comment editor — timeline, diff inlay, inline edit, and the Create-PR description — shares one markdown toolbar:
+Every comment editor — timeline, diff inlay, inline edit, and the Create-PR description — shares one GitHub-style composer. A **Write | Preview** tab strip sits at the top-left; the formatting toolbar runs along the same top strip, pushed flush-right beside the tabs, with **Polish grammar &amp; spelling with AI** pinned at the far right behind a separator. A muted **Add files** link sits on the bottom row, to the left of the submit buttons.
 
-![The comment editor with its formatting toolbar](comment-toolbar.png){ width="640" border-effect="line" }
+![The comment composer with the Write | Preview tabs and top formatting toolbar strip, and the Add files link on the bottom row beside the submit buttons](comment-toolbar.png){ width="640" border-effect="line" }
 
 | Group | Buttons |
 |-------|---------|
@@ -24,6 +24,8 @@ Every comment editor — timeline, diff inlay, inline edit, and the Create-PR de
 | **AI** | **Polish grammar &amp; spelling with AI** |
 
 In the diff/editor inlays you also get **Insert code suggestion**. Keyboard: <shortcut>⌘B</shortcut> bold, <shortcut>⌘I</shortcut> italic, <shortcut>⌘E</shortcut> inline code, <shortcut>⌘K</shortcut> link, <shortcut>⌘↵</shortcut> submit (or <shortcut>Ctrl</shortcut> equivalents).
+
+Click **Preview** to swap the editor for a rendered view of your markdown — the same rendering a posted comment uses, so what you preview matches what you'll post. The formatting toolbar hides while Preview is showing; click **Write** to return to editing. An empty draft previews as *Nothing to preview*.
 
 > **Polish grammar &amp; spelling with AI** rewrites your draft (or selection) in place as one undoable edit. It needs an [AI provider configured](AI-Features.md); when AI is off, the button is hidden.
 > {style="tip"}
@@ -39,10 +41,13 @@ Click an existing `@mention` to open a small **author card** with the person's a
 
 ## Images and attachments
 
-- **Paste** an image from the clipboard (<shortcut>⌘V</shortcut> / <shortcut>Ctrl+V</shortcut>).
-- **Drag &amp; drop** image files (`png`, `jpg`, `gif`, `webp`, `bmp`, `svg`).
+Three ways to attach an image:
 
-Each upload shows an *Uploading…* placeholder, then becomes an inline markdown image. Right-click a posted image for **Copy Image Link** or **Download Image…**.
+- **Add files** — click the **Add files** link on the bottom row (left of the submit buttons) to pick image files from disk.
+- **Paste** an image from the clipboard (<shortcut>⌘V</shortcut> / <shortcut>Ctrl+V</shortcut>).
+- **Drag &amp; drop** image files onto the editor.
+
+Supported types are `png`, `jpg`, `jpeg`, `gif`, `webp`, `bmp`, and `svg`. Each upload shows an *Uploading…* placeholder, then becomes an inline markdown image. Right-click a posted image for **Copy Image Link** or **Download Image…**.
 
 ## Suggested edits
 
@@ -56,7 +61,8 @@ The thread renders a **Suggested change** card with **Apply Locally** (and **Com
 
 - **Reply** — add a follow-up. Azure DevOps threads are flat; your reply lands at the end of the thread.
 - **Resolve / Reopen** — close a thread when it's done, or reopen it. Resolved threads are de-emphasized and hidden when the diff filter is set to *Show only unresolved*.
-- **Edit / Delete** — on your own comments, via the hover actions in the comment header. Anyone can give a comment a **👍 (Thumbs up)**.
+- **👍 Thumbs up** — a like button on the reactions row below the comment body (shared with **Reply** / **Resolve** on review threads). It shows a count once there's at least one like and turns gold when you've liked; its tooltip toggles between **Thumbs up** and **Remove thumbs up**.
+- **More actions (⋯)** — the overflow menu in the comment header. On any comment: **Copy link**, **Copy Markdown**, and **Quote reply** (inserts the comment as a `>` block quote into this thread's reply editor) plus **Hide** — a local-only collapse that hides the body in place and survives rebuilds and restarts. On your own comments you also get **Edit** and **Delete**.
 
 ### Thread status
 

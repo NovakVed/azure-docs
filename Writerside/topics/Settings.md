@@ -29,9 +29,20 @@ See [Notifications &amp; Attention](Notifications-and-Attention.md) for what the
 |---------|---------|
 | **Mark files as viewed when their diff is opened** | Off |
 | **Show attention markers on pull-request rows** | Off |
+| **Show keyboard shortcut on comment buttons** | On |
+
+The last toggle shows the submit shortcut (<shortcut>⌘↵</shortcut> / <shortcut>Ctrl+Enter</shortcut>) just before a composer's **Comment** / **Reply** / **Save** button label. The shortcut works either way — this only shows the hint.
 
 > **Show unread markers** isn't here — it's a tool-window toggle (gear menu), not a settings checkbox. Drafts are a list **filter**, not a setting.
 > {style="note"}
+
+### Go to Pull Requests
+
+| Setting | Default |
+|---------|---------|
+| **Show in the Search Everywhere window** | On |
+
+Controls how **Go to Pull Requests** opens. While on, the action adds a **Pull Requests** tab to Search Everywhere (next to Files / Symbols / Actions). Uncheck it to open a standalone quick-pick dialog instead.
 
 ## Version Control → Azure DevOps → AI Settings
 

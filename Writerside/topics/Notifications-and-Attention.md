@@ -16,7 +16,7 @@ You can be notified about:
 - A **reviewer vote change** on a PR you authored.
 - A chance to **Create a PR** right after you push a branch.
 
-A single event opens straight to the PR (**Open pull request**); several at once coalesce into one balloon (*"N pull requests need your review"*) that opens the tool window. Dismiss with **Mark as read**.
+A single event opens straight to the PR — **Open pull request** for a review request or vote change, **View comment** for a mention or reply (it lands on the exact comment). Several at once coalesce into one balloon (*"N pull requests need your review"*) whose **Show pull requests** action opens the tool window. Balloons dismiss themselves once you act or after a moment — there's no button to click to clear them.
 
 ## The tool-window badge
 
