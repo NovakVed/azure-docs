@@ -46,14 +46,6 @@ jobs:
           artifact: ${{ env.ARTIFACT }}
           docker-version: ${{ env.DOCKER_VERSION }}
 
-      - name: Save algolia-indexes (optional, for search)
-        uses: actions/upload-artifact@v7
-        with:
-          name: algolia-indexes
-          path: artifacts/algolia-indexes-AZD.zip
-          retention-days: 7
-        continue-on-error: true
-
       - name: Save build artifact for diagnostics
         uses: actions/upload-artifact@v7
         with:
