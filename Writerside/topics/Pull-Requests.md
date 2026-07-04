@@ -14,6 +14,15 @@ The tool window appears in the left sidebar whenever the open project has at lea
 
 ## Find pull requests
 
+### The default view: yours
+
+With no filters active, the list shows exactly what the Azure DevOps web **Mine** tab shows - active PRs you **created**, **assigned to you**, or **assigned to one of your teams**. It's the view you land on, and the view *Clear filters* returns you to.
+
+Pick any chip, preset, or search and the list switches to the full set; clear them and you're back to yours.
+
+> Team-assigned PRs need the right [permissions](Permissions.md). If your credentials can't read team memberships, the plugin tells you once - the rest of the view keeps working.
+> {style="note"}
+
 ### Quick Filters
 
 Click the **filter icon** on the left of the chip row for one-click presets. A badge on the icon shows how many filters are active.
@@ -22,10 +31,11 @@ Click the **filter icon** on the left of the chip row for one-click presets. A b
 
 | Preset | Shows |
 |--------|-------|
+| **All pull requests** | Everything - the escape from the default "yours" view |
 | **Open pull requests** | All active PRs |
 | **Awaiting my review** | PRs where you're a reviewer who hasn't voted |
 | **Involving me** | PRs you authored, review, or were mentioned in |
-| **Clear N filter(s)** | Resets every active filter |
+| **Clear N filter(s)** | Resets every active filter - back to the default "yours" view |
 
 ### Filter chips
 
@@ -44,7 +54,7 @@ A scrollable row of chips sits below the search field. Click any chip to refine 
 
 Filters persist **per project** across IDE restarts. To clear them, use the Quick Filters menu's **Clear N filter(s)**.
 
-> **Search** - type in the field above the chips to match PR titles and descriptions. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear - selecting one opens it directly.
+> **Search** - type in the field above the chips to match PR titles, numbers, authors, and branch names. Press <shortcut>⇧ Shift</shortcut> twice to open *Search Everywhere*, where Azure DevOps PRs also appear - selecting one opens it directly.
 > {style="tip"}
 
 ### Jump to a specific PR

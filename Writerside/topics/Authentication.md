@@ -33,13 +33,14 @@ The plugin uses these scopes (the login dialog lists them):
 
 | Scope (in the PAT UI) | Powers |
 |-----------------------|--------|
-| **Code** → *Read &amp; write + Status* | Reading PRs and diffs, commenting, voting, completing/abandoning, and branch-policy/status checks. **Required.** |
+| **Code** → *Read &amp; write + Status* | Reading PRs and diffs, commenting, voting, completing/abandoning, and branch-policy/status checks. **Required** - the login dialog refuses a token without it. |
 | **User Profile** → *Read* | Your profile and reviewer avatars. |
-| **Identity** → *Read* | @-mention autocomplete. |
+| **Identity** → *Read* | @-mention autocomplete and the team-membership lookup behind the default PR list. |
 | **Work Items** → *Read* | Linked work items on a PR and the Work Items filter. |
+| **Project and Team** → *Read* | Team memberships for the **assigned to my team** part of the default PR list. |
 | **Security** → *Manage* | The permission check that enables the **Override branch policies** option in the Complete dialog. |
 
-> **Quick recipe:** if you just want everything to work, pick **Full access**. The granular scopes above are for stricter security policies.
+> **Quick recipe:** if you just want everything to work, pick **Full access**. The granular scopes above are for stricter security policies - [Permissions](Permissions.md) explains exactly what turns off without each one.
 > {style="tip"}
 
 ### 2. Add it to the plugin
@@ -85,8 +86,10 @@ Refresh tokens renew automatically (with a 60-second leeway before expiry), so y
 
 | Tier | What you get | What you don't |
 |------|--------------|----------------|
-| **Full access** *(recommended)* | Pull requests, comments, votes, status checks, **plus** avatars, @-mention search, and linked work items. | - |
-| **Standard access** | Pull requests and comments only. | Avatars show as initials; @-mention autocomplete returns nothing; work-item links don't render. |
+| **Full access** *(recommended)* | Pull requests, comments, votes, status checks, **plus** avatars, @-mention search, linked work items, and team memberships for the default PR list. | - |
+| **Standard access** | Pull requests and comments only. | Avatars show as initials; @-mention autocomplete returns nothing; work-item links don't render; PRs assigned to your **teams** drop out of the default list. |
+
+For the full permission-by-permission map, see [Permissions](Permissions.md).
 
 > To change tiers later, remove the account and sign in again - the picker reappears on every fresh sign-in.
 > {style="tip"}
