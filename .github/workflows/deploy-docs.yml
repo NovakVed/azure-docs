@@ -157,6 +157,43 @@ jobs:
             | xargs -0 sed -i "s|</head>|<script src=\"/azure-docs/lang-switch.js?v=${GITHUB_SHA}\" defer></script></head>|"
           echo "pages injected: $(grep -rl 'lang-switch.js' site --include='*.html' | wc -l)"
 
+      # Writerside's header (.wh-header, a flex row) ships with just the logo
+      # icon - no product name - and puts the language switcher directly after
+      # it, with .wh-header__divider (flex-grow:1, an invisible 0-height
+      # spacer, verified against the deployed DOM) pushing only the theme
+      # toggle to the far right. Reordering the flex children moves the
+      # switcher to sit next to the toggle instead, and an ::after on the logo
+      # link adds the product name beside the icon. Scoped to >=1024px, the
+      # breakpoint (confirmed 900px mobile / 1024px desktop) where Writerside
+      # swaps to its hamburger header and drops .wh-header__switchers from the
+      # DOM entirely - below that there's no theme toggle to sit next to, and
+      # no room for the extra text.
+      - name: "Header: product name next to the logo, language switcher next to the theme toggle"
+        run: |
+          cat > site/header-custom.css <<'EOF'
+          @media (min-width: 1024px) {
+            .wh-header__link {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              text-decoration: none;
+            }
+            .wh-header__link::after {
+              content: "Azure DevOps Pull Requests";
+              color: #fff;
+              font-size: 17px;
+              font-weight: 600;
+              white-space: nowrap;
+            }
+            [data-test="header-edition"] { order: 2; }
+            .wh-header__divider { order: 1; }
+            .wh-header__switchers { order: 3; }
+          }
+          EOF
+          find site -name '*.html' -print0 \
+            | xargs -0 sed -i "s|</head>|<link rel=\"stylesheet\" href=\"/azure-docs/header-custom.css?v=${GITHUB_SHA}\"></head>|"
+          echo "pages injected: $(grep -rl 'header-custom.css' site --include='*.html' | wc -l)"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
