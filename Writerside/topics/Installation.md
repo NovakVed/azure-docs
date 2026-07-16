@@ -75,7 +75,10 @@ The plugin **depends on** two IDE-bundled plugins (enabled by default everywhere
 
 ## Update and uninstall
 
-Updates appear automatically (no IDE restart - the plugin loads dynamically). To update manually, open <ui-path>Settings | Plugins | Installed</ui-path>, find the plugin, and click **Update** if shown. To uninstall, use the gear icon → **Uninstall**; your stored credentials are removed from the keychain too.
+Updates show up in <ui-path>Settings | Plugins | Installed</ui-path> - click **Update** when one is offered, then **restart the IDE** so the new version loads fully. To uninstall, use the gear icon → **Uninstall**; your stored credentials are removed from the keychain too.
+
+> **Restart after installing or updating.** The plugin registers a couple of start-up hooks (for example, the tool-window activation shortcuts), so it isn't hot-reloaded in place - a full IDE restart makes sure everything is wired up.
+> {style="note"}
 
 > **Next up:** [Quick Start](Quick-Start.md) for a one-minute tour, or [Authentication](Authentication.md) to sign in. To enable summaries and AI review, see [AI Features](AI-Features.md).
 > {style="tip"}

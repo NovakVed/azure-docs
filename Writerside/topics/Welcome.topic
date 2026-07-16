@@ -7,7 +7,7 @@
     <section-starting-page>
         <title>%product%</title>
         <description>
-            Browse, review, and complete Azure DevOps pull requests - with AI assists and team statistics - without ever leaving your JetBrains IDE.
+            Browse, review, and complete Azure DevOps pull requests - with AI assists, team statistics, and in-IDE pipeline runs - without ever leaving your JetBrains IDE.
         </description>
 
         <spotlight>
@@ -31,6 +31,8 @@
                summary="Balloons, a tool-window badge, and row chips for PRs that need your review or @mention you."/>
             <a href="Statistics.md" type="data"
                summary="KPIs and a dozen charts - time-to-merge, review velocity, vote distribution, and more."/>
+            <a href="Pipelines.md" type="integration"
+               summary="Watch runs, read step logs, and approve gates from the Pipelines tool window - pull-request checks open right in the IDE."/>
         </primary>
 
         <secondary>

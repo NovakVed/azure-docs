@@ -8,6 +8,12 @@ Yes. Add the server's URL when creating an account. Both Azure DevOps Server 201
 
 The cloud product uses `dev.azure.com/<org>`. On-prem uses your own server URL (e.g. `https://devops.example.com`). PAT auth works for both. OAuth via Microsoft Entra is **cloud-only**.
 
+## Does it support Azure Pipelines?
+
+Yes. A dedicated **Pipelines** tool window lets you browse pipelines and runs, watch the interactive stage graph, read colour-coded step logs, and approve or reject manual-approval gates - all inside the IDE. When a pull-request CI check points at an Azure build, clicking **Details…** opens that run in the IDE instead of the browser.
+
+It's on by default. Toggle **Enable Pipelines integration** under <ui-path>Settings | Version Control | Azure DevOps</ui-path> - when off, the tool window is hidden, no pipeline notifications or badges fire, and pipeline checks open in the browser. See [Pipelines](Pipelines.md).
+
 ## Does it work with classic TFVC (non-Git) repositories?
 
 No. The plugin is for Git-backed Azure Repos only. **TFVC** (Team Foundation Version Control, Microsoft's centralized VCS predecessor to Git in Azure DevOps) is not supported.

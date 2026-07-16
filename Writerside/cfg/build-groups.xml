@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE build-groups SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-groups.dtd">
+<build-groups xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-groups.xsd"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Builds all language instances as one site; each header gets a switcher
+         dropdown (aliases below) so readers can change language. -->
+    <build-group name="languages">
+        <instance instance-id="azd"    alias="English"  path="/"/>
+        <instance instance-id="azd-zh" alias="简体中文" path="/zh"/>
+        <instance instance-id="azd-ja" alias="日本語"   path="/ja"/>
+        <instance instance-id="azd-ko" alias="한국어"    path="/ko"/>
+    </build-group>
+</build-groups>
