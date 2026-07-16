@@ -60,16 +60,20 @@ jobs:
           mkdir -p site
           echo "=== artifacts/ produced by the group build ==="
           ls -la artifacts/ || true
-          # Unzip every produced webHelp zip into the site root. A group build
-          # lays each instance out under its build-group `path` (/, /zh, /ja, /ko),
-          # so this yields en at the root and the translations under their folders.
+          # A group build emits ONE combined zip with every instance flat at the
+          # root (English = welcome.html; translations = welcome-zh.html, etc.).
+          # -o overwrites without the interactive prompt that hung the run.
           for z in artifacts/*.zip; do
             [ -e "$z" ] || continue
             echo "--- unzipping $z ---"
-            unzip -O UTF-8 -qq "$z" -d site
+            unzip -o -O UTF-8 -qq "$z" -d site
           done
-          echo "=== resulting site tree (top 2 levels) ==="
-          find site -maxdepth 2 | sort | head -60
+          echo "=== welcome pages (URL check) ==="
+          ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
+          echo "=== language subfolders present? ==="
+          ls -d site/zh site/ja site/ko 2>/dev/null || echo "(no /zh /ja /ko subfolders — flat, suffixed layout)"
+          echo "=== site root (first 40 entries) ==="
+          ls -1 site | head -40
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
