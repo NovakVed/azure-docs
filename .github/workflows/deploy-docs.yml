@@ -149,9 +149,12 @@ jobs:
             }, true);
           })();
           EOF
-          # Inject into every page of every language (absolute src works from all folders).
+          # Inject into every page of every language (absolute src works from all
+          # folders). The ?v=<commit> cache-buster matters: GitHub Pages serves
+          # with max-age=600, and a stale cached copy of this script is exactly
+          # what shipped the root-landing behaviour to already-warm browsers.
           find site -name '*.html' -print0 \
-            | xargs -0 sed -i 's|</head>|<script src="/azure-docs/lang-switch.js" defer></script></head>|'
+            | xargs -0 sed -i "s|</head>|<script src=\"/azure-docs/lang-switch.js?v=${GITHUB_SHA}\" defer></script></head>|"
           echo "pages injected: $(grep -rl 'lang-switch.js' site --include='*.html' | wc -l)"
 
       - name: Upload Pages artifact
