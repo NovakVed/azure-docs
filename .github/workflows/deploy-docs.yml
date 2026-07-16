@@ -60,9 +60,11 @@ jobs:
           mkdir -p site
           echo "=== artifacts/ produced by the group build ==="
           ls -la artifacts/ || true
-          # A group build emits ONE combined zip with every instance flat at the
-          # root (English = welcome.html; translations = welcome-zh.html, etc.).
-          # -o overwrites without the interactive prompt that hung the run.
+          # A group build emits ONE combined zip: English at the root plus one
+          # subfolder per build-group path (/zh, /ja, /ko), each page carrying
+          # its instance's topic-file suffix (welcome-zh.html — deduplicated to
+          # clean names by the next step). -o overwrites without the
+          # interactive prompt that hung the first run.
           for z in artifacts/*.zip; do
             [ -e "$z" ] || continue
             echo "--- unzipping $z ---"
@@ -73,10 +75,32 @@ jobs:
           done
           echo "=== welcome pages (URL check) ==="
           ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
-          echo "=== language subfolders present? ==="
-          ls -d site/zh site/ja site/ko 2>/dev/null || echo "(no /zh /ja /ko subfolders — flat, suffixed layout)"
-          echo "=== site root (first 40 entries) ==="
-          ls -1 site | head -40
+
+      # The topic files are suffixed (welcome-zh.md) only because Writerside
+      # requires unique topic names across all instances in the shared topics/
+      # dir. With each language already namespaced by its /zh /ja /ko folder,
+      # the suffix is pure redundancy in the URL — so strip it: rename the
+      # pages to clean names and rewrite every reference (nav links, HelpTOC,
+      # config, sitemap — and the root instances' switcher links) to match.
+      - name: Clean language URLs (/zh/welcome.html instead of /zh/welcome-zh.html)
+        run: |
+          for l in zh ja ko; do
+            [ -d "site/$l" ] || continue
+            renamed=0
+            while IFS= read -r -d '' f; do
+              mv "$f" "${f%-$l.html}.html"
+              renamed=$((renamed+1))
+            done < <(find "site/$l" -type f -name "*-$l.html" -print0)
+            echo "$l: renamed $renamed pages"
+          done
+          # Rewrite references in every text asset, site-wide (the English
+          # root's language-switcher links point into zh/…-zh.html too).
+          find site -type f \( -name '*.html' -o -name '*.json' -o -name '*.xml' -o -name '*.js' -o -name '*.jhm' \) -print0 \
+            | xargs -0 sed -i -E 's/-(zh|ja|ko)\.html/.html/g'
+          echo "=== cleaned welcome pages ==="
+          ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
+          echo "=== any suffixed page left? (should be empty) ==="
+          find site -name '*-zh.html' -o -name '*-ja.html' -o -name '*-ko.html' | head
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
