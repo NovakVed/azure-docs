@@ -66,7 +66,10 @@ jobs:
           for z in artifacts/*.zip; do
             [ -e "$z" ] || continue
             echo "--- unzipping $z ---"
-            unzip -o -O UTF-8 -qq "$z" -d site
+            # The group build zips entries with absolute paths (/index.html).
+            # unzip strips them and extracts fine, but exits 1 for the
+            # warnings, which `bash -e` treats as failure. Accept 1; fail on 2+.
+            unzip -o -O UTF-8 -qq "$z" -d site || [ $? -eq 1 ]
           done
           echo "=== welcome pages (URL check) ==="
           ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
