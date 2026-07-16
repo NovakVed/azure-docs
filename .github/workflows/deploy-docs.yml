@@ -73,6 +73,16 @@ jobs:
             # warnings, which `bash -e` treats as failure. Accept 1; fail on 2+.
             unzip -o -O UTF-8 -qq "$z" -d site || [ $? -eq 1 ]
           done
+          # The build-group paths now carry the /azure-docs Pages prefix (see
+          # cfg/build-groups.xml); if the builder mirrors that prefix into the
+          # zip layout, hoist the contents so Pages doesn't serve /azure-docs/azure-docs/.
+          if [ -d site/azure-docs ]; then
+            echo "--- hoisting site/azure-docs/* to site root ---"
+            tmp=$(mktemp -d)
+            mv site/azure-docs/* "$tmp"/
+            rm -rf site
+            mv "$tmp" site
+          fi
           echo "=== welcome pages (URL check) ==="
           ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
 
@@ -101,6 +111,50 @@ jobs:
           ls -1 site/welcome*.html site/*/welcome*.html 2>/dev/null || true
           echo "=== any suffixed page left? (should be empty) ==="
           find site -name '*-zh.html' -o -name '*-ja.html' -o -name '*-ko.html' | head
+
+      # Writerside's language switcher (config.json `editions`) only links to
+      # each instance's ROOT. Since the clean-URLs step gives every language an
+      # identical page set (quick-start.html ↔ zh/quick-start.html), a small
+      # click-interceptor forwards a language switch to the SAME page in the
+      # target language instead. Capture-phase listener on edition-root links
+      # only, and only when the target language differs — so logo/home links
+      # keep their normal behaviour, and if JS is off the switcher still works
+      # (root landing, as before).
+      - name: Make the language switcher keep the current page
+        run: |
+          cat > site/lang-switch.js <<'EOF'
+          (function () {
+            var BASE = '/azure-docs';
+            function norm(p) { return p.replace(/\/+$/, '') || '/'; }
+            var ROOTS = { }; // normalized edition root path -> lang ('' = en)
+            ROOTS[norm(BASE)] = '';
+            ['zh', 'ja', 'ko'].forEach(function (l) { ROOTS[norm(BASE + '/' + l)] = l; });
+            function pageLang(pathname) {
+              var m = pathname.replace(BASE, '').match(/^\/(zh|ja|ko)(\/|$)/);
+              return m ? m[1] : '';
+            }
+            document.addEventListener('click', function (e) {
+              var a = e.target && e.target.closest && e.target.closest('a[href]');
+              if (!a) return;
+              var url;
+              try { url = new URL(a.getAttribute('href'), location.href); } catch (err) { return; }
+              if (url.origin !== location.origin) return;
+              var target = norm(url.pathname);
+              if (!(target in ROOTS)) return;                    // not an edition-root link
+              var targetLang = ROOTS[target];
+              var currentLang = pageLang(location.pathname);
+              if (targetLang === currentLang) return;            // same language (logo/home) — leave it
+              var page = location.pathname.split('/').pop();
+              if (!page || page === 'index.html' || !/\.html$/.test(page)) return; // no page to map — root is fine
+              e.preventDefault();
+              location.href = (targetLang ? BASE + '/' + targetLang : BASE) + '/' + page;
+            }, true);
+          })();
+          EOF
+          # Inject into every page of every language (absolute src works from all folders).
+          find site -name '*.html' -print0 \
+            | xargs -0 sed -i 's|</head>|<script src="/azure-docs/lang-switch.js" defer></script></head>|'
+          echo "pages injected: $(grep -rl 'lang-switch.js' site --include='*.html' | wc -l)"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5

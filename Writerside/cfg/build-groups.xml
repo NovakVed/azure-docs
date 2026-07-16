@@ -3,11 +3,15 @@
 <build-groups xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-groups.xsd"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <!-- Builds all language instances as one site; each header gets a switcher
-         dropdown (aliases below) so readers can change language. -->
+         dropdown (aliases below) so readers can change language. The paths land
+         verbatim in every instance's config.json `editions` urls, which the
+         switcher navigates to as domain-absolute links — so they MUST carry the
+         GitHub-project-pages prefix (/azure-docs), else English resolves to
+         novakved.github.io/ and the others to novakved.github.io/zh (404). -->
     <build-group name="languages">
-        <instance instance-id="azd"    alias="English"  path="/"/>
-        <instance instance-id="azd-zh" alias="简体中文" path="/zh"/>
-        <instance instance-id="azd-ja" alias="日本語"   path="/ja"/>
-        <instance instance-id="azd-ko" alias="한국어"    path="/ko"/>
+        <instance instance-id="azd"    alias="English"  path="/azure-docs"/>
+        <instance instance-id="azd-zh" alias="简体中文" path="/azure-docs/zh"/>
+        <instance instance-id="azd-ja" alias="日本語"   path="/azure-docs/ja"/>
+        <instance instance-id="azd-ko" alias="한국어"    path="/azure-docs/ko"/>
     </build-group>
 </build-groups>
