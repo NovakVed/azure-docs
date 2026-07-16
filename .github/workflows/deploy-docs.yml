@@ -29,8 +29,10 @@ jobs:
       # group, INSTANCE points at the build-group name (cfg/build-groups.xml
       # <build-group name="languages">) and is-group=true is set below.
       INSTANCE: Writerside/languages
-      # Pin Writerside builder version. Bump when JetBrains releases a new one.
-      DOCKER_VERSION: '243.21565'
+      # Pin Writerside builder version. Group builds (is-group / -g) need a
+      # builder newer than 243.21565 (2024.3), which rejects `-g` with
+      # "Unrecognized option: -g" - so use the current release.
+      DOCKER_VERSION: '2026.06.8817'
 
     steps:
       - name: Checkout
