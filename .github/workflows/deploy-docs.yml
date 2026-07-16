@@ -24,12 +24,11 @@ jobs:
     name: Build with Writerside
     runs-on: ubuntu-latest
     env:
-      # Format is `<module>/<product>`: module = the Writerside dir name,
-      # product = the instance id from azd.tree (<instance-profile id="azd">).
-      INSTANCE: Writerside/azd
-      # Artifact name is derived from the product name + instance, with the
-      # `2-all` suffix added by writerside-github-action.
-      ARTIFACT: webHelpAZD2-all.zip
+      # Build the whole language BUILD GROUP (English + zh / ja / ko) so the
+      # published site carries all languages behind the header switcher. For a
+      # group, INSTANCE points at the build-group name (cfg/build-groups.xml
+      # <build-group name="languages">) and is-group=true is set below.
+      INSTANCE: Writerside/languages
       # Pin Writerside builder version. Bump when JetBrains releases a new one.
       DOCKER_VERSION: '243.21565'
 
@@ -39,28 +38,36 @@ jobs:
 
       # JetBrains hasn't published a Node 24 build yet (v4 is the latest major),
       # so this step still logs a Node 20 deprecation notice until they release one.
-      - name: Build docs using Writerside Docker builder
+      - name: Build docs (language group) using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4
         with:
           instance: ${{ env.INSTANCE }}
-          artifact: ${{ env.ARTIFACT }}
+          is-group: 'true'
           docker-version: ${{ env.DOCKER_VERSION }}
 
-      - name: Save build artifact for diagnostics
+      - name: Save build artifacts for diagnostics
         uses: actions/upload-artifact@v7
         with:
           name: webHelp
-          # Bundle the zip AND report.json - the checker job needs the
-          # report to surface broken links / missing topics.
-          path: |
-            artifacts/${{ env.ARTIFACT }}
-            artifacts/report.json
+          # A group build emits multiple files (one per instance) into artifacts/.
+          path: artifacts/*
           retention-days: 7
 
       - name: Unzip site for GitHub Pages
         run: |
           mkdir -p site
-          unzip -O UTF-8 -qq "artifacts/${{ env.ARTIFACT }}" -d site
+          echo "=== artifacts/ produced by the group build ==="
+          ls -la artifacts/ || true
+          # Unzip every produced webHelp zip into the site root. A group build
+          # lays each instance out under its build-group `path` (/, /zh, /ja, /ko),
+          # so this yields en at the root and the translations under their folders.
+          for z in artifacts/*.zip; do
+            [ -e "$z" ] || continue
+            echo "--- unzipping $z ---"
+            unzip -O UTF-8 -qq "$z" -d site
+          done
+          echo "=== resulting site tree (top 2 levels) ==="
+          find site -maxdepth 2 | sort | head -60
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
