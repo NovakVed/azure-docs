@@ -112,41 +112,39 @@ jobs:
           echo "=== any suffixed page left? (should be empty) ==="
           find site -name '*-zh.html' -o -name '*-ja.html' -o -name '*-ko.html' | head
 
-      # Writerside's language switcher (config.json `editions`) only links to
-      # each instance's ROOT. Since the clean-URLs step gives every language an
+      # Writerside's language switcher (config.json `editions`) only navigates
+      # to each instance's ROOT, and it's not made of links — the header
+      # renders a div.edition-switch dropdown whose options are plain
+      # `ul.edition-switch__popup > li` items handled in JS (verified against
+      # the deployed DOM). Since the clean-URLs step gives every language an
       # identical page set (quick-start.html ↔ zh/quick-start.html), a small
-      # click-interceptor forwards a language switch to the SAME page in the
-      # target language instead. Capture-phase listener on edition-root links
-      # only, and only when the target language differs — so logo/home links
-      # keep their normal behaviour, and if JS is off the switcher still works
-      # (root landing, as before).
+      # capture-phase click-interceptor recognises those items by their alias
+      # label and forwards to the SAME page in the target language. Same-
+      # language picks fall through (dropdown closes normally), and without JS
+      # the switcher still works (root landing, as before). The alias→lang map
+      # must match cfg/build-groups.xml.
       - name: Make the language switcher keep the current page
         run: |
           cat > site/lang-switch.js <<'EOF'
           (function () {
             var BASE = '/azure-docs';
-            function norm(p) { return p.replace(/\/+$/, '') || '/'; }
-            var ROOTS = { }; // normalized edition root path -> lang ('' = en)
-            ROOTS[norm(BASE)] = '';
-            ['zh', 'ja', 'ko'].forEach(function (l) { ROOTS[norm(BASE + '/' + l)] = l; });
+            var ALIAS_TO_LANG = { 'English': '', '简体中文': 'zh', '日本語': 'ja', '한국어': 'ko' };
             function pageLang(pathname) {
               var m = pathname.replace(BASE, '').match(/^\/(zh|ja|ko)(\/|$)/);
               return m ? m[1] : '';
             }
             document.addEventListener('click', function (e) {
-              var a = e.target && e.target.closest && e.target.closest('a[href]');
-              if (!a) return;
-              var url;
-              try { url = new URL(a.getAttribute('href'), location.href); } catch (err) { return; }
-              if (url.origin !== location.origin) return;
-              var target = norm(url.pathname);
-              if (!(target in ROOTS)) return;                    // not an edition-root link
-              var targetLang = ROOTS[target];
+              var li = e.target && e.target.closest && e.target.closest('ul.edition-switch__popup li');
+              if (!li) return;
+              var alias = (li.textContent || '').trim();
+              if (!(alias in ALIAS_TO_LANG)) return;              // unknown item — let the app handle it
+              var targetLang = ALIAS_TO_LANG[alias];
               var currentLang = pageLang(location.pathname);
-              if (targetLang === currentLang) return;            // same language (logo/home) — leave it
+              if (targetLang === currentLang) return;             // picked the current language — just close
               var page = location.pathname.split('/').pop();
-              if (!page || page === 'index.html' || !/\.html$/.test(page)) return; // no page to map — root is fine
+              if (!page || page === 'index.html' || !/\.html$/.test(page)) return; // nothing to map — root is fine
               e.preventDefault();
+              e.stopPropagation();                                // beat the app's own root-navigation handler
               location.href = (targetLang ? BASE + '/' + targetLang : BASE) + '/' + page;
             }, true);
           })();
