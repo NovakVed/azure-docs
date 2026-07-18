@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb75845-49ec-496c-85be-7b837a6a18e8" name="Changes" comment="chore: cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cfb75845-49ec-496c-85be-7b837a6a18e8" name="Changes" comment="chore: fix tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +34,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="63" />
+    <option name="cachedIndexableFilesCount" value="133" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -243,8 +241,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
       </set>
     </attachedChunks>
   </component>
@@ -263,6 +261,7 @@
       <workItem from="1782679151161" duration="848000" />
       <workItem from="1783273336440" duration="955000" />
       <workItem from="1783313070589" duration="875000" />
+      <workItem from="1784361201960" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="chore: cleanup and update logo">
       <option name="closed" value="true" />
@@ -280,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782667824271</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: fix tests">
+      <option name="closed" value="true" />
+      <created>1784361225342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784361225342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +296,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: cleanup and update logo" />
     <MESSAGE value="chore: cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: cleanup" />
+    <MESSAGE value="chore: fix tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: fix tests" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
