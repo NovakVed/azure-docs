@@ -19,7 +19,6 @@
 | **Notify on replies in threads I participated in** | On |
 | **Notify when reviewer votes change on my PRs** | On |
 | **Offer Create PR after I push to an Azure DevOps remote** | On |
-| **Include my own pull requests and @mentions** | Off |
 
 이 설정들이 무엇을 제어하는지는 [알림 및 주의](Notifications-and-Attention-ko.md)를 참조하세요.
 

@@ -19,7 +19,6 @@
 | **Notify on replies in threads I participated in** | 开 |
 | **Notify when reviewer votes change on my PRs** | 开 |
 | **Offer Create PR after I push to an Azure DevOps remote** | 开 |
-| **Include my own pull requests and @mentions** | 关 |
 
 关于这些设置的作用，参见[通知与关注](Notifications-and-Attention-zh.md)。
 

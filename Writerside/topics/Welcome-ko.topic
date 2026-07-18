@@ -27,7 +27,7 @@
                summary="PR의 브랜치가 체크아웃되어 있을 때 일반 편집기 위에 오버레이되는 리뷰 스레드."/>
             <a href="Discussions-and-Comments-ko.md" type="community"
                summary="마크다운, @멘션, 편집 제안, 이미지 첨부를 지원하는 스레드형 댓글."/>
-            <a href="Notifications-and-Attention-ko.md" type="feedback"
+            <a href="Notifications-and-Attention-ko.md" type="mail"
                summary="리뷰가 필요하거나 사용자를 @멘션하는 PR을 위한 풍선 알림, 도구 창 배지, 행 칩."/>
             <a href="Statistics-ko.md" type="data"
                summary="KPI와 열두 가지 차트 - 병합 소요 시간, 리뷰 속도, 투표 분포 등."/>

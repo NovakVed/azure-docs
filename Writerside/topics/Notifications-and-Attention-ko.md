@@ -50,9 +50,5 @@
 | **Notify on replies in threads I participated in** | 켜짐 |
 | **Notify when reviewer votes change on my PRs** | 켜짐 |
 | **Offer Create PR after I push to an Azure DevOps remote** | 켜짐 |
-| **Include my own pull requests and @mentions** | 꺼짐 |
-
-> **혼자 테스트 중이신가요?** **Include my own pull requests and @mentions**를 켜면 여러분 자신의 활동에서 발생하는 주목 신호를 확인할 수 있습니다. 리포지토리에 여러분 혼자만 있을 때 유용합니다.
-> {style="tip"}
 
 <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>에서 플러그인의 알림 그룹(팝업 / 도구 창 / 로그 전용)을 라우팅할 수도 있습니다. [Settings](Settings-ko.md#notifications)를 참조하세요.

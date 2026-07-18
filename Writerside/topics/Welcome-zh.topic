@@ -27,7 +27,7 @@
                summary="当 PR 的分支已检出时，审查线程会叠加显示在你的常规编辑器上。"/>
             <a href="Discussions-and-Comments-zh.md" type="community"
                summary="支持 markdown、@提及、建议修改和图片附件的线程化评论。"/>
-            <a href="Notifications-and-Attention-zh.md" type="feedback"
+            <a href="Notifications-and-Attention-zh.md" type="mail"
                summary="为需要你审查或 @提及你的 PR 提供气泡通知、工具窗口徽章和行内标记。"/>
             <a href="Statistics-zh.md" type="data"
                summary="KPI 以及十多种图表 —— 合并时长、审查速度、投票分布等等。"/>

@@ -62,7 +62,7 @@
 > 비슷하지만 역할이 다른 두 단축키: **Mention user**(<shortcut>⇧⌘M</shortcut>)는 작성기 *내부*에 `@mention`을 삽입하고, **Add Review Comment**(<shortcut>⌃⇧M</shortcut>)는 편집기나 diff에서 캐럿 위치에 새 댓글을 *시작*합니다.
 > {style="note"}
 
-## PR 목록, 타임라인, 상세 보기 내부
+## PR 목록, 타임라인, 상세 보기 내부 {id="in-the-pr-list-timeline-and-detail-view"}
 
 | 액션 | 단축키 | Action ID |
 |--------|----------|-----------|
@@ -77,7 +77,7 @@
 > Pull Requests 도구 창에는 Reload 버튼이 없습니다 - 새로 고침은 키보드로만 하거나(또는 우클릭 → **Refresh List**) 가능합니다.
 > {style="note"}
 
-## PR 타임라인 내부
+## PR 타임라인 내부 {id="in-the-pr-timeline"}
 
 이 키들은 **View Timeline** 편집기를 조작하며 해당 편집기에 포커스가 있을 때 동작합니다. 작성기 키처럼 내장되어 있습니다(Keymap에 없음). 언제든지 <shortcut>?</shortcut>를 누르면 같은 목록이 표시됩니다.
 

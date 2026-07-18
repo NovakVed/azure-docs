@@ -18,7 +18,7 @@
 
 不能。该插件仅适用于以 Git 为后端的 Azure Repos。**TFVC**（Team Foundation Version Control，微软在 Azure DevOps 中先于 Git 的集中式版本控制系统）不受支持。
 
-## 我可以在没有 Azure DevOps 帐户的情况下使用它吗？
+## 我可以在没有 Azure DevOps 帐户的情况下使用它吗？ {id="can-i-use-this-without-an-azure-devops-account"}
 
 不能——该插件专用于 Azure DevOps。对于 GitHub 或 GitLab，请分别使用捆绑的 GitHub 插件或 JetBrains GitLab 插件。
 
@@ -35,7 +35,7 @@
 
 OAuth 令牌会自动刷新；PAT 会在你创建时设定的日期到期。PAT 在设计上会绕过 MFA——生成一个 PAT 要求用户已经完成身份验证，但令牌本身不会再次提示。
 
-## 我的代码会被发送到 Azure DevOps 以外的任何地方吗？
+## 我的代码会被发送到 Azure DevOps 以外的任何地方吗？ {id="is-my-code-sent-anywhere-other-than-azure-devops"}
 
 除非你已明确启用 AI 功能并配置了提供程序，否则不会。完整的按功能数据流请参阅[隐私与数据](Privacy-and-Data-zh.md)。
 

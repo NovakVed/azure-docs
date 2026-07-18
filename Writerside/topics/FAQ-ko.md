@@ -18,7 +18,7 @@
 
 아니요. 이 플러그인은 Git 기반 Azure Repos 전용입니다. **TFVC**(Team Foundation Version Control, Azure DevOps에서 Git 이전에 사용된 Microsoft의 중앙 집중식 VCS)는 지원하지 않습니다.
 
-## Azure DevOps 계정 없이도 사용할 수 있나요?
+## Azure DevOps 계정 없이도 사용할 수 있나요? {id="can-i-use-this-without-an-azure-devops-account"}
 
 아니요. 이 플러그인은 오직 Azure DevOps 전용입니다. GitHub이나 GitLab의 경우, 각각 번들로 제공되는 GitHub 플러그인이나 JetBrains GitLab 플러그인을 사용하세요.
 
@@ -35,7 +35,7 @@
 
 OAuth 토큰은 자동으로 갱신됩니다. PAT는 생성 시 설정한 날짜에 만료됩니다. PAT는 설계상 MFA를 우회합니다. PAT를 생성하려면 사용자가 이미 인증되어 있어야 하지만, 토큰 자체는 다시 인증을 요구하지 않습니다.
 
-## 내 코드가 Azure DevOps 외의 다른 곳으로 전송되나요?
+## 내 코드가 Azure DevOps 외의 다른 곳으로 전송되나요? {id="is-my-code-sent-anywhere-other-than-azure-devops"}
 
 AI 기능을 명시적으로 활성화하고 공급자를 구성한 경우가 아니라면 전송되지 않습니다. 기능별 전체 데이터 흐름은 [개인정보 및 데이터](Privacy-and-Data-ko.md)를 참조하세요.
 

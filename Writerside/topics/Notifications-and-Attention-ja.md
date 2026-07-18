@@ -50,9 +50,5 @@
 | **Notify on replies in threads I participated in** | オン |
 | **Notify when reviewer votes change on my PRs** | オン |
 | **Offer Create PR after I push to an Azure DevOps remote** | オン |
-| **Include my own pull requests and @mentions** | オフ |
-
-> **一人でテストしていますか？** **Include my own pull requests and @mentions** をオンにすると、自分自身のアクティビティからも注目シグナルを確認できます。リポジトリに自分しかいないときに便利です。
-> {style="tip"}
 
 プラグインの通知グループ（ポップアップ / ツールウィンドウ / ログのみ）は、<ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> で振り分けることもできます。[Settings](Settings-ja.md#notifications) を参照してください。

@@ -18,7 +18,7 @@
 
 いいえ。このプラグインは Git ベースの Azure Repos 専用です。**TFVC**(Team Foundation Version Control、Azure DevOps における Git の前身であるマイクロソフトの集中型 VCS)はサポートされていません。
 
-## Azure DevOps アカウントなしで使えますか?
+## Azure DevOps アカウントなしで使えますか? {id="can-i-use-this-without-an-azure-devops-account"}
 
 いいえ。このプラグインは Azure DevOps 専用です。GitHub や GitLab については、それぞれ同梱の GitHub プラグインまたは JetBrains GitLab プラグインを使用してください。
 
@@ -35,7 +35,7 @@
 
 OAuth トークンは自動的に更新されます。PAT は作成時に設定した日付で期限切れになります。PAT は設計上 MFA をバイパスします。PAT を生成するにはユーザーが既に認証済みである必要がありますが、トークン自体は再度プロンプトを表示しません。
 
-## 私のコードは Azure DevOps 以外の場所に送信されますか?
+## 私のコードは Azure DevOps 以外の場所に送信されますか? {id="is-my-code-sent-anywhere-other-than-azure-devops"}
 
 AI 機能を明示的に有効化してプロバイダーを設定していない限り、送信されません。機能ごとの完全なデータフローについては、[プライバシーとデータ](Privacy-and-Data-ja.md)を参照してください。
 

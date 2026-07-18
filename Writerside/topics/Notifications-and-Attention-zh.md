@@ -50,9 +50,5 @@
 | **Notify on replies in threads I participated in** | 开 |
 | **Notify when reviewer votes change on my PRs** | 开 |
 | **Offer Create PR after I push to an Azure DevOps remote** | 开 |
-| **Include my own pull requests and @mentions** | 关 |
-
-> **独自测试？** 打开 **Include my own pull requests and @mentions**，即可看到来自你自己活动的关注信号——当仓库里只有你一个人时很有用。
-> {style="tip"}
 
 你也可以在 <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> 中路由该插件的通知组（弹窗 / 工具窗口 / 仅日志）——参见 [设置](Settings-zh.md#notifications)。

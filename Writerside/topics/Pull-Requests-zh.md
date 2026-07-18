@@ -57,7 +57,7 @@
 > **搜索**——在纸片上方的字段中输入，即可匹配拉取请求的标题、编号、作者和分支名称。按两次 <shortcut>⇧ Shift</shortcut> 打开 *Search Everywhere*，Azure DevOps 拉取请求也会出现在其中——选中某个即可直接打开。
 > {style="tip"}
 
-### 跳转到特定拉取请求
+### 跳转到特定拉取请求 {id="jump-to-a-specific-pr"}
 
 当你已经知道想要哪个拉取请求时，可跳过列表。**Go to Pull Requests…** 会对每个已缓存的拉取请求进行模糊搜索——按 **id、标题、作者或仓库**——并直接在其时间线上打开。空搜索会列出每个已缓存的拉取请求（未读优先，然后是最新的）。
 
@@ -72,7 +72,7 @@
 > 更喜欢专用对话框？在[设置](Settings-zh.md)中**关闭** **Show in the Search Everywhere window**，该操作便会改为打开自己的快速选取弹出窗口——一个带有状态**漏斗**的搜索字段，以及 <shortcut>↵</shortcut> 打开 / <shortcut>⎋</shortcut> 关闭键。
 > {style="tip"}
 
-## 读懂一行拉取请求
+## 读懂一行拉取请求 {id="read-a-pr-row"}
 
 每一行都一目了然地呈现状态：
 
@@ -85,7 +85,7 @@
 
 未读的拉取请求可显示一个蓝色**未读标记**圆点，它会对新提交*以及*新评论活动作出反应。可从工具窗口齿轮 → **Show unread markers** 切换。
 
-## 打开并操作拉取请求
+## 打开并操作拉取请求 {id="open-and-act-on-a-pr"}
 
 **点击**某个拉取请求，即可在编辑器标签中打开其单窗格详情视图。底部的操作栏会根据你的角色自适应：
 
@@ -112,7 +112,7 @@
 | **Open on Web** · **Copy Link** | 跳转到 / 复制 dev.azure.com URL |
 | **Summarize Pull Request** · **Run AI Review** | [AI 辅助](AI-Features-zh.md) |
 
-### 完成拉取请求
+### 完成拉取请求 {id="complete-a-pull-request"}
 
 点击 **Complete** 打开 **Complete Pull Request** 对话框。选择一个 **Merge type**——实时图示会显示所得历史的形状：
 

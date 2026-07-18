@@ -50,9 +50,5 @@ Open <ui-path>Settings | Version Control | Azure DevOps</ui-path> → **Polling 
 | **Notify on replies in threads I participated in** | On |
 | **Notify when reviewer votes change on my PRs** | On |
 | **Offer Create PR after I push to an Azure DevOps remote** | On |
-| **Include my own pull requests and @mentions** | Off |
-
-> **Testing solo?** Turn on **Include my own pull requests and @mentions** to see attention signals from your own activity - handy when you're the only one in the repo.
-> {style="tip"}
 
 You can also route the plugin's notification groups (popup / tool window / log-only) in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> - see [Settings](Settings.md#notifications).

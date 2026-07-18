@@ -19,7 +19,6 @@
 | **Notify on replies in threads I participated in** | オン |
 | **Notify when reviewer votes change on my PRs** | オン |
 | **Offer Create PR after I push to an Azure DevOps remote** | オン |
-| **Include my own pull requests and @mentions** | オフ |
 
 これらが何を制御するかについては、[通知と注目](Notifications-and-Attention-ja.md)を参照してください。
 

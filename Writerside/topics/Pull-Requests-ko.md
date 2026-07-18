@@ -57,7 +57,7 @@
 > **검색** - 칩 위의 필드에 입력하여 PR 제목, 번호, 작성자 및 브랜치 이름을 일치시킵니다. <shortcut>⇧ Shift</shortcut>를 두 번 눌러 *Search Everywhere*를 여세요. 여기에 Azure DevOps PR도 나타나며 - 하나를 선택하면 바로 열립니다.
 > {style="tip"}
 
-### 특정 PR로 이동
+### 특정 PR로 이동 {id="jump-to-a-specific-pr"}
 
 원하는 PR을 이미 알고 있을 때는 목록을 건너뛰세요. **Go to Pull Requests…**는 캐시된 모든 PR을 **id, 제목, 작성자 또는 리포지토리**로 퍼지 검색하여 해당 타임라인에서 바로 엽니다. 빈 검색은 캐시된 모든 PR을 나열합니다(읽지 않은 것 먼저, 그다음 최신순).
 
@@ -72,7 +72,7 @@
 > 전용 대화 상자를 선호하시나요? [Settings](Settings-ko.md)에서 **Show in the Search Everywhere window**를 **끄면** 이 작업이 대신 자체 빠른 선택 팝업을 엽니다 - 옆에 상태 **깔때기(funnel)**가 있는 검색 필드와 <shortcut>↵</shortcut> 열기 / <shortcut>⎋</shortcut> 닫기 키를 갖춘 팝업입니다.
 > {style="tip"}
 
-## PR 행 읽기
+## PR 행 읽기 {id="read-a-pr-row"}
 
 각 행에는 상태가 한눈에 보이도록 담겨 있습니다:
 
@@ -85,7 +85,7 @@
 
 읽지 않은 PR에는 새 커밋 *및* 새 댓글 활동에 반응하는 파란색 **읽지 않음 표시** 점이 나타날 수 있습니다. 도구 창의 톱니바퀴 → **Show unread markers**에서 토글하세요.
 
-## PR 열기 및 작업
+## PR 열기 및 작업 {id="open-and-act-on-a-pr"}
 
 PR을 **클릭**하면 에디터 탭에서 단일 창 상세 보기가 열립니다. 하단의 작업 표시줄은 여러분의 역할에 맞게 조정됩니다:
 
@@ -112,7 +112,7 @@ PR을 **클릭**하면 에디터 탭에서 단일 창 상세 보기가 열립니
 | **Open on Web** · **Copy Link** | dev.azure.com URL로 이동 / 복사합니다 |
 | **Summarize Pull Request** · **Run AI Review** | [AI 지원](AI-Features-ko.md) |
 
-### 풀 리퀘스트 완료
+### 풀 리퀘스트 완료 {id="complete-a-pull-request"}
 
 **Complete**를 클릭하면 **Complete Pull Request** 대화 상자가 열립니다. **Merge type**을 선택하세요 - 실시간 다이어그램이 결과적으로 만들어지는 히스토리 형태를 보여줍니다:
 

@@ -19,7 +19,6 @@ The main page. At the top is the **accounts** panel (add **+**, edit ✏, remove
 | **Notify on replies in threads I participated in** | On |
 | **Notify when reviewer votes change on my PRs** | On |
 | **Offer Create PR after I push to an Azure DevOps remote** | On |
-| **Include my own pull requests and @mentions** | Off |
 
 See [Notifications &amp; Attention](Notifications-and-Attention.md) for what these drive.
 

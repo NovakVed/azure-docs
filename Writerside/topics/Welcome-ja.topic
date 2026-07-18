@@ -27,7 +27,7 @@
                summary="プルリクエストのブランチをチェックアウトすると、通常のエディター上にレビュースレッドが重ねて表示されます。"/>
             <a href="Discussions-and-Comments-ja.md" type="community"
                summary="Markdown、@メンション、編集提案、画像添付に対応したスレッド形式のコメント。"/>
-            <a href="Notifications-and-Attention-ja.md" type="feedback"
+            <a href="Notifications-and-Attention-ja.md" type="mail"
                summary="レビューが必要なプルリクエストや @メンションされたプルリクエストを、バルーン、ツールウィンドウのバッジ、行のチップで通知します。"/>
             <a href="Statistics-ja.md" type="data"
                summary="KPI と十数種類のチャート。マージまでの時間、レビュー速度、投票の分布など。"/>
